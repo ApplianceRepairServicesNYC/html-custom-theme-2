@@ -50,11 +50,15 @@
         .additional-submenu.active { max-height:1200px; padding:10px 0; }
         .additional-submenu li { padding-left:50px !important; }
         .additional-submenu li:hover { padding-left:60px !important; }
+
+        /* ORIGINAL RED CALL BUTTON STYLE (used for nav + form) */
         .nav-call-btn {
             background:var(--red); color:white; padding:12px 28px; border-radius:6px; font-weight:700;
-            text-decoration:none; font-size:17px; transition:all .3s;
+            text-decoration:none; font-size:17px; transition:all .3s; cursor:pointer; display:inline-block;
+            min-width:140px; text-align:center;
         }
         .nav-call-btn:hover { background:#c41b20; transform:translateY(-2px); }
+
         .hero { background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('https://geappliancerepairbergencounty.com/assets/img/ge-repair-bergen-county.jpg') center/cover no-repeat; color:white; text-align:center; padding:160px 20px 100px; margin-top:80px; }
         .btn { background:var(--red); color:white; padding:14px 34px; border-radius:6px; font-weight:600; text-decoration:none; display:inline-block; margin:15px; font-size:18px; }
         section { padding:90px 0; }
@@ -66,7 +70,7 @@
         .service:hover i { color:var(--red); }
         footer { background:#111; color:#ccc; padding:60px 0 30px; text-align:center; }
 
-        /* === NEW SERVICE AREAS SECTION (replaces old one – inserted exactly as provided) === */
+        /* SERVICE AREAS SECTION (100% unchanged) */
         #sa-service-areas{
             font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
             background:transparent;border:2px solid #808080;border-radius:12px;
@@ -110,11 +114,28 @@
         .sa-zip-dropdown.active{max-height:40px;opacity:1;transform:translateY(0);padding-top:4px}
         @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-        /* Contact Form (kept your existing styles with minor tweaks) */
+        /* Contact Form */
         #cf-schedule-container{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);padding:20px;margin:3rem auto 0;max-width:1200px}
         .cf-schedule-text{font-family:'Montserrat',sans-serif;font-size:1.5rem;color:#2A2A2A;font-weight:600;text-align:center;margin-bottom:15px}
-        .cf-book-button,.cf-call-button{display:block;padding:12px 20px;background:linear-gradient(45deg,#003087,#00205B);color:#fff;font-weight:600;border-radius:8px;border:none;cursor:pointer;margin:10px auto;width:100%;max-width:220px;height:60px;display:flex;align-items:center;justify-content:center;transition:all .3s}
-        .cf-book-button:hover,.cf-call-button:hover{background:linear-gradient(45deg,#00205B,#001A45);transform:translateY(-3px)}
+        
+        /* Book Online button (blue) */
+        .cf-book-button{
+            display:block; padding:12px 20px; background:linear-gradient(45deg,#003087,#00205B);
+            color:#fff; font-weight:600; border-radius:8px; border:none; cursor:pointer;
+            margin:10px auto; width:100%; max-width:220px; height:60px;
+            display:flex; align-items:center; justify-content:center; transition:all .3s;
+        }
+        .cf-book-button:hover{background:linear-gradient(45deg,#00205B,#001A45);transform:translateY(-3px)}
+
+        /* Call Now button directly below Book Online - SAME RED STYLE */
+        .cf-call-now-btn{
+            display:block; padding:12px 20px; background:var(--red); color:white;
+            font-weight:700; border-radius:6px; border:none; cursor:pointer;
+            margin:10px auto; width:100%; max-width:220px; height:60px;
+            display:flex; align-items:center; justify-content:center; transition:all .3s; font-size:17px;
+        }
+        .cf-call-now-btn:hover{background:#c41b20;transform:translateY(-3px)}
+
         .cf-contact-form-section{max-height:0;overflow:hidden;opacity:0;transition:all .6s ease;padding:0;background:linear-gradient(135deg,#003087 0%,#00205B 50%,#001A45 100%);border-radius:12px;margin-top:15px}
         .cf-contact-form-section.active{max-height:1600px;opacity:1;padding:20px}
         .expect-text{font-size:.95rem;color:#fff;text-align:center;margin-bottom:15px}
@@ -128,7 +149,7 @@
         .cf-success-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:2000;align-items:center;justify-content:center}
         .cf-success-modal.active{display:flex}
         .cf-success-content{background:white;padding:40px 30px;border-radius:12px;text-align:center;max-width:90%;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
-        .cf-success-content p{font-size:20px;font-weight:600;color:#003087;margin:0 0 25px;line-height:1.4}
+        .cf-success-content p{font-size:20px;font-weight:600;color:#003087;margin:0 0 25px;line-height:1.6}
         .cf-close-modal{background:var(--red);color:white;border:none;padding:12px 32px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer}
         @media(max-width:768px){
             .nav-wrapper{flex-direction:column;padding:15px 0}
@@ -137,12 +158,11 @@
             .services-dropdown{top:100px}
             .sa-responsive-columns{columns:2}
         }
-        @media(max-width:480px){
-            .sa-responsive-columns{columns:1}
-        }
+        @media(max-width:480px){.sa-responsive-columns{columns:1}}
     </style>
 </head>
 <body>
+
 <header>
     <div class="container nav-wrapper">
         <div class="logo">GE Appliance Repair Bergen County</div>
@@ -178,7 +198,7 @@
                     </div>
                 </ul>
             </div>
-            <a href="tel:+12012983499" class="nav-call-btn">Call Now</a>
+            <div class="nav-call-btn" id="navCallNow">Call Now</div>
         </div>
     </div>
 </header>
@@ -211,16 +231,14 @@
 <section class="alt" id="contact">
     <div class="container">
 
-        <!-- NEW SERVICE AREAS SECTION (exactly as you provided – no modifications) -->
+        <!-- SERVICE AREAS (unchanged) -->
         <section id="sa-service-areas">
             <h2>Service Areas – All of Bergen County, NJ</h2>
             <p>We proudly serve <strong>every single town and municipality</strong> in Bergen County with fast, reliable, same-day GE appliance repair.</p>
-         
             <div class="sa-dropdown-container">
                 <button class="sa-dropdown-button" id="saToggleBtn" aria-expanded="false" aria-controls="saDropdownContent">
                     View All Bergen County Service Areas
                 </button>
-             
                 <div class="sa-dropdown-content" id="saDropdownContent">
                     <div class="sa-slide">
                         <h2>All Bergen County NJ Towns We Service</h2>
@@ -230,11 +248,13 @@
             </div>
         </section>
 
-        <!-- CONTACT / SCHEDULING FORM (unchanged) -->
+        <!-- CONTACT FORM - CALL NOW DIRECTLY BELOW BOOK ONLINE -->
         <section id="cf-schedule-container">
             <div class="cf-schedule-text">Schedule Your GE Repair Online</div>
+            
             <button class="cf-book-button" id="cfBookButton">Book Online</button>
-            <button class="cf-call-button" id="cfCallButton">Call Now</button>
+            <button class="cf-call-now-btn" id="formCallNow">Call Now</button>
+
             <div class="cf-contact-form-section" id="cfContactFormSection">
                 <p class="expect-text">What to Expect: Once you submit your request, a representative will contact you within 30 minutes...</p>
                 <form id="cfContactForm" class="cf-contact-form">
@@ -275,9 +295,10 @@
                     <button type="submit" class="cf-form-button">Send Request</button>
                 </form>
             </div>
+
             <div class="cf-success-modal" id="cfSuccessModal">
                 <div class="cf-success-content">
-                    <p>Your request has been sent.<br>A GE technician will contact you within 30 minutes!</p>
+                    <p id="successMessage">Your request has been sent.<br>A GE technician will contact you within 30 minutes!</p>
                     <button class="cf-close-modal" id="cfCloseModal">Close</button>
                 </div>
             </div>
@@ -295,7 +316,7 @@
 </footer>
 
 <script>
-// FULL LIST OF BERGEN COUNTY TOWNS (sorted alphabetically)
+// Full Bergen County towns list (unchanged)
 const bergenTowns = [
     {name:"Allendale",zip:"07401"},{name:"Alpine",zip:"07620"},{name:"Bergenfield",zip:"07621"},
     {name:"Bogota",zip:"07603"},{name:"Carlstadt",zip:"07072"},{name:"Cliffside Park",zip:"07010"},
@@ -324,63 +345,83 @@ const bergenTowns = [
 ].sort((a,b) => a.name.localeCompare(b.name));
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ==== SERVICE AREAS (new dropdown) ====
-    const toggleBtn = document.getElementById('saToggleBtn');
-    const dropdown = document.getElementById('saDropdownContent');
+    // Service Areas
+    const saToggle = document.getElementById('saToggleBtn');
+    const saContent = document.getElementById('saDropdownContent');
     const townsList = document.getElementById('townsList');
     function populateTowns() {
         if (townsList.innerHTML) return;
-        townsList.innerHTML = bergenTowns.map(town => `
+        townsList.innerHTML = bergenTowns.map(t => `
             <li onclick="this.querySelector('.sa-zip-dropdown').classList.toggle('active')">
-                <h3>${town.name}</h3>
-                <div class="sa-zip-dropdown">ZIP Code: ${town.zip}</div>
+                <h3>${t.name}</h3>
+                <div class="sa-zip-dropdown">ZIP Code: ${t.zip}</div>
             </li>
         `).join('');
     }
-    toggleBtn.addEventListener('click', () => {
-        const expanded = dropdown.classList.toggle('active');
-        toggleBtn.setAttribute('aria-expanded', expanded);
+    saToggle.addEventListener('click', () => {
+        const expanded = saContent.classList.toggle('active');
+        saToggle.setAttribute('aria-expanded', expanded);
         if (expanded) populateTowns();
     });
 
-    // ==== EXISTING SCRIPTS (menu, form, etc.) ====
+    // Navigation Menu
     const menu = document.getElementById('servicesMenu');
     const toggle = document.getElementById('servicesToggle');
     const subToggle = document.getElementById('additionalToggle');
     const subMenu = document.getElementById('additionalSubmenu');
-
     toggle.addEventListener('click', e => { e.stopPropagation(); menu.classList.toggle('active'); });
-    subToggle.addEventListener('click', e => {
-        e.stopPropagation();
-        subToggle.classList.toggle('active');
-        subMenu.classList.toggle('active');
-    });
+    subToggle.addEventListener('click', e => { e.stopPropagation(); subToggle.classList.toggle('active'); subMenu.classList.toggle('active'); });
     document.addEventListener('click', () => { menu.classList.remove('active'); subToggle.classList.remove('active'); subMenu.classList.remove('active'); });
     document.getElementById('servicesDropdown').addEventListener('click', e => e.stopPropagation());
 
+    // Book Online Toggle
     document.getElementById('cfBookButton').addEventListener('click', () => {
         document.getElementById('cfContactFormSection').classList.toggle('active');
     });
 
+    // OBFUSCATED CALL NOW (both buttons)
+    const setupCallButton = (btn) => {
+        btn.addEventListener('click', function() {
+            if (this.dataset.revealed) return;
+            const digits = [2,0,1,2,9,8,3,4,9,9];
+            const num = digits.map(d => String.fromCharCode(48 + d)).join('');
+            const formatted = '+1 (' + num.slice(0,3) + ') ' + num.slice(3,6) + '-' + num.slice(6);
+            this.innerHTML = formatted;
+            this.dataset.revealed = 'true';
+            this.onclick = () => window.location.href = 'tel:+' + num;
+        });
+    };
+    setupCallButton(document.getElementById('navCallNow'));
+    setupCallButton(document.getElementById('formCallNow'));
+
+    // Form Submit
     document.getElementById('cfContactForm').addEventListener('submit', function(e) {
         e.preventDefault();
+        const email = this.user_email.value.trim();
+        const appliance = this.appliance.value || 'GE Appliance';
+
         emailjs.sendForm('service_emxksio', 'template_tmexlql', this)
             .then(() => {
                 this.reset();
                 document.getElementById('cfContactFormSection').classList.remove('active');
+                document.getElementById('successMessage').innerHTML = `
+                    <strong>Thank you!</strong><br><br>
+                    Your request for <strong>${appliance}</strong> has been sent.<br><br>
+                    We will contact you at<br><strong>${email}</strong><br>
+                    within the next 30 minutes.
+                `;
                 document.getElementById('cfSuccessModal').classList.add('active');
                 document.getElementById('cfModalOverlay').classList.add('active');
             })
-            .catch(() => alert('Failed to send. Please call (201) 298-3499'));
+            .catch(() => alert('Failed to send. Please try again or call us.'));
     });
 
+    // Modal Close
     document.getElementById('cfCloseModal').onclick = () => {
         document.getElementById('cfSuccessModal').classList.remove('active');
         document.getElementById('cfModalOverlay').classList.remove('active');
     };
     document.getElementById('cfModalOverlay').onclick = () => document.getElementById('cfCloseModal').click();
-
-    document.getElementById('cfCallButton').addEventListener('click', () => window.location.href = 'tel:+12012983499');
 });
 </script>
 </body>
