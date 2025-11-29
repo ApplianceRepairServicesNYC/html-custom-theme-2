@@ -221,26 +221,27 @@
 
             <div class="cf-contact-form-section" id="cfContactFormSection">
                 <p class="expect-text">What to Expect: Once you submit your request, a representative will contact you within 30 minutes...</p>
-                <form id="cfContactForm" class="cf-contact-form" novalidate>
+                
+                <form id="cfContactForm" class="cf-contact-form">
                     <div class="cf-form-group">
                         <label for="cfName">Name *</label>
-                        <input type="text" id="cfName" placeholder="John Doe" required>
+                        <input type="text" id="cfName" name="from_name" placeholder="John Doe" required>
                     </div>
                     <div class="cf-form-group">
                         <label for="cfEmail">Email *</label>
-                        <input type="email" id="cfEmail" placeholder="john@example.com" required>
+                        <input type="email" id="cfEmail" name="from_email" placeholder="john@example.com" required>
                     </div>
                     <div class="cf-form-group">
                         <label for="cfPhone">Phone *</label>
-                        <input type="tel" id="cfPhone" placeholder="1234567890" required pattern="[0-9]{10}">
+                        <input type="tel" id="cfPhone" name="phone" placeholder="1234567890" required pattern="[0-9]{10}">
                     </div>
                     <div class="cf-form-group">
                         <label for="cfAddress">Address *</label>
-                        <textarea id="cfAddress" placeholder="123 Main St, Ridgewood, NJ 07450" required></textarea>
+                        <textarea id="cfAddress" name="address" placeholder="123 Main St, Ridgewood, NJ 07450" required></textarea>
                     </div>
                     <div class="cf-form-group">
                         <label for="cfSubject">Appliance Type *</label>
-                        <select id="cfSubject" required>
+                        <select id="cfSubject" name="appliance" required>
                             <option value="">Select Appliance</option>
                             <option>GE Refrigerator Repair</option>
                             <option>GE Washer Repair</option>
@@ -254,7 +255,7 @@
                     </div>
                     <div class="cf-form-group">
                         <label for="cfMessage">Describe the Problem *</label>
-                        <textarea id="cfMessage" placeholder="Briefly describe the issue..." required></textarea>
+                        <textarea id="cfMessage" name="message" placeholder="Briefly describe the issue..." required></textarea>
                     </div>
                     <button type="submit" class="cf-form-button">Send Request</button>
                 </form>
@@ -337,21 +338,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (content.classList.contains('active')) populateTowns();
     });
 
-    // Contact Form
+    // Contact Form - NOW SENDS ALL DATA
     document.getElementById('cfBookButton').addEventListener('click', () => {
         document.getElementById('cfContactFormSection').classList.toggle('active');
     });
 
-    document.getElementById('cfContactForm').addEventListener('submit', e => {
+    document.getElementById('cfContactForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        emailjs.sendForm('service_emxksio','template_tmexlql', e.target)
+
+        emailjs.sendForm('service_emxksio', 'template_tmexlql', this)
             .then(() => {
-                e.target.reset();
+                this.reset();
                 document.getElementById('cfContactFormSection').classList.remove('active');
                 document.getElementById('cfSuccessModal').classList.add('active');
                 document.getElementById('cfModalOverlay').classList.add('active');
             })
-            .catch(() => alert('Failed to send. Please try again or call us.'));
+            .catch(() => alert('Failed to send. Please call us at (201) 298-3499'));
     });
 
     document.getElementById('cfCloseModal').onclick = () => {
@@ -360,10 +362,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     document.getElementById('cfModalOverlay').onclick = () => document.getElementById('cfCloseModal').click();
 
-    // Call Now Button
     document.getElementById('cfCallButton').addEventListener('click', () => {
-        const phone = '+12012983499';
-        window.location.href = 'tel:' + phone;
+        window.location.href = 'tel:+12012983499';
     });
 });
 </script>
