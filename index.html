@@ -77,7 +77,7 @@
         .service:hover i { color:var(--red); }
         footer { background:#111; color:#ccc; padding:60px 0 30px; text-align:center; }
 
-        /* Service Areas - ZIP CODES NOW FULLY VISIBLE */
+        /* Service Areas - ZIP CODES FULLY VISIBLE */
         #sa-service-areas{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px;position:relative}
         #sa-service-areas h2{font-size:34px;text-align:center;color:inherit;margin-bottom:5px}
         #sa-service-areas p{font-size:16px;text-align:center;margin-bottom:20px}
@@ -91,14 +91,8 @@
         .sa-responsive-columns li{padding:14px 12px;margin:8px 0;border-radius:10px;background:rgba(240,244,255,.9);transition:all .3s;cursor:pointer;position:relative}
         .sa-responsive-columns li:hover{background:#d4e4ff;transform:scale(1.02)}
         .sa-responsive-columns h3{margin:0;font-size:16px;color:#1e3c72;font-weight:600}
-        .sa-zip-dropdown{
-            font-size:14px;color:#444;margin-top:8px;padding-left:15px;
-            max-height:0;overflow:hidden;opacity:0;transition:all .4s ease;
-            background:rgba(255,255,255,0.8);border-radius:6px;padding:6px 10px;
-        }
-        .sa-zip-dropdown.active{
-            max-height:50px;opacity:1;padding:8px 12px;margin-top:10px;
-        }
+        .sa-zip-dropdown{font-size:14px;color:#444;margin-top:8px;padding-left:15px;max-height:0;overflow:hidden;opacity:0;transition:all .4s ease;background:rgba(255,255,255,0.8);border-radius:6px;padding:6px 10px}
+        .sa-zip-dropdown.active{max-height:60px;opacity:1;padding:10px 12px;margin-top:10px}
 
         /* Contact Form */
         #cf-schedule-container{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);padding:20px;margin:3rem auto 0;max-width:1200px}
@@ -129,10 +123,7 @@
             .services-dropdown{top:100px}
             .sa-responsive-columns{columns:2}
         }
-        @media(max-width:480px){
-            .sa-responsive-columns{columns:1}
-            .nav-call-btn{padding:12px 20px;font-size:16px}
-        }
+        @media(max-width:480px){.sa-responsive-columns{columns:1}}
     </style>
 </head>
 <body>
@@ -227,6 +218,7 @@
             <div class="cf-contact-form-section" id="cfContactFormSection">
                 <p class="expect-text">What to Expect: Once you submit your request, a representative will contact you within 30 minutes...</p>
 
+                <!-- FINAL FORM - ALL DATA SENT CORRECTLY -->
                 <form id="cfContactForm" class="cf-contact-form">
                     <div class="cf-form-group">
                         <label for="cfName">Name *</label>
@@ -234,7 +226,7 @@
                     </div>
                     <div class="cf-form-group">
                         <label for="cfEmail">Email *</label>
-                        <input type="email" id="cfEmail" name="reply_to" placeholder="john@example.com" required>
+                        <input type="email" id="cfEmail" name="user_email" placeholder="john@example.com" required>
                     </div>
                     <div class="cf-form-group">
                         <label for="cfPhone">Phone *</label>
@@ -337,14 +329,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', () => { menu.classList.remove('active'); subToggle.classList.remove('active'); subMenu.classList.remove('active'); });
     dropdown.addEventListener('click', e => e.stopPropagation());
 
-    // Service Areas
     document.getElementById('saToggleBtn').addEventListener('click', () => {
         const content = document.getElementById('saDropdownContent');
         content.classList.toggle('active');
         if (content.classList.contains('active')) populateTowns();
     });
 
-    // Contact Form
     document.getElementById('cfBookButton').addEventListener('click', () => {
         document.getElementById('cfContactFormSection').classList.toggle('active');
     });
