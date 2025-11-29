@@ -20,15 +20,17 @@
     <meta property="og:type" content="website">
     <link rel="icon" type="image/x-icon" href="https://geappliancerepairbergencounty.com/favicon.ico">
     <link rel="icon" href="https://geappliancerepairbergencounty.com/favicon.png" type="image/png">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&family=Roboto:wght@400;700&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){ emailjs.init({ publicKey: "zfCrLmZU8eK9CuZcs" }); })();
     </script>
+
     <!-- Schema -->
     <script type="application/ld+json">
     {
@@ -73,6 +75,7 @@
       }
     }
     </script>
+
     <style>
         :root { --blue: #003087; --red: #e41e26; --gray: #f8f9fa; }
         body { font-family: 'Inter', sans-serif; margin:0; color:#333; background:#fff; line-height:1.6; }
@@ -80,37 +83,37 @@
         .container { max-width:1200px; margin:0 auto; padding:0 20px; }
         header { background:var(--blue); color:white; padding:20px 0; position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
         .logo { font-size:26px; font-weight:700; }
-        .nav-wrapper { display:flex; justify-content:space-between; align-items:center; }
-        .nav-right { display:flex; gap:25px; align-items:center; }
+        .nav-wrapper { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
+        .nav-right { display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
 
-        /* FIXED DROPDOWNS - WORK ON MOBILE */
-        .services-menu, .additional-menu, .call-now-menu { position:relative; display:inline-block; cursor:pointer; }
-        .services-btn, .additional-btn { color:white; font-weight:600; padding:10px 16px; border-radius:4px; transition:all .3s; white-space:nowrap; }
-        .call-now-btn { background:var(--red); color:white; padding:12px 24px; border-radius:6px; font-weight:600; font-size:16px; }
+        /* Mobile-friendly dropdowns */
+        .services-menu, .additional-menu { position:relative; }
+        .services-btn, .additional-btn { 
+            color:white; font-weight:600; cursor:pointer; padding:10px 16px; border-radius:4px; transition:all .3s; white-space:nowrap;
+        }
+        .services-btn:hover, .additional-btn:hover { background:rgba(255,255,255,0.1); }
 
-        .services-dropdown, .additional-dropdown, .call-dropdown {
+        .services-dropdown, .additional-dropdown {
             display:none; position:absolute; right:0; top:100%; background:var(--blue);
             min-width:280px; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,0.4); padding:12px 0; z-index:999;
         }
         .additional-dropdown { min-width:340px; }
-        .call-dropdown { background:var(--red); min-width:240px; text-align:center; padding:16px; }
-        .call-dropdown a { color:white; font-size:20px; font-weight:700; text-decoration:none; }
+        .services-menu.active .services-dropdown,
+        .additional-menu.active .additional-dropdown { display:block; }
 
-        /* Desktop Hover */
-        @media (min-width: 769px) {
-            .services-menu:hover .services-dropdown,
-            .additional-menu:hover .additional-dropdown,
-            .call-now-menu:hover .call-dropdown { display:block; }
-            .services-btn:hover, .additional-btn:hover { background:rgba(255,255,255,0.1); }
-            .call-now-btn:hover { background:#c41b20; }
+        .services-dropdown li, .additional-dropdown li { 
+            padding:12px 25px; color:#eee; font-size:15px; transition:all .3s; 
+        }
+        .services-dropdown li:hover, .additional-dropdown li:hover { 
+            background:var(--red); color:white; padding-left:35px; 
         }
 
-        .services-dropdown li, .additional-dropdown li {
-            padding:12px 25px; color:#eee; font-size:15px; transition:all .3s;
+        /* Red Call Now Button */
+        .nav-call-btn {
+            background:var(--red); color:white; padding:12px 28px; border-radius:6px; font-weight:700; 
+            text-decoration:none; font-size:17px; transition:all .3s;
         }
-        .services-dropdown li:hover, .additional-dropdown li:hover {
-            background:var(--red); color:white; padding-left:35px;
-        }
+        .nav-call-btn:hover { background:#c41b20; transform:translateY(-2px); }
 
         .hero { background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('https://geappliancerepairbergencounty.com/assets/img/ge-repair-bergen-county.jpg') center/cover no-repeat; color:white; text-align:center; padding:160px 20px 100px; margin-top:80px; }
         .btn { background:var(--red); color:white; padding:14px 34px; border-radius:6px; font-weight:600; text-decoration:none; display:inline-block; margin:15px; font-size:18px; }
@@ -124,7 +127,7 @@
         .service:hover i { color:var(--red); }
         footer { background:#111; color:#ccc; padding:60px 0 30px; text-align:center; }
 
-        /* ALL YOUR ORIGINAL STYLES - UNTOUCHED */
+        /* Service Areas & Contact Form Styles (original kept) */
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         #sa-service-areas{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px;position:relative;animation:fadeIn .8s ease-out forwards}
         #sa-service-areas h2{font-size:34px;text-align:center;color:inherit;margin-bottom:5px;text-shadow:0 2px 4px rgba(0,0,0,.3);transition:transform .3s,color .3s}
@@ -163,15 +166,66 @@
         .cf-form-button{padding:.5rem 1rem;background:linear-gradient(45deg,#003087,#00205B);color:#fff;font-weight:600;font-size:1rem;border-radius:8px;border:none;cursor:pointer;transition:all .3s;width:200px;height:60px;margin:0 auto;display:flex;align-items:center;justify-content:center}
         .cf-form-button:hover{background:linear-gradient(45deg,#00205B,#001A45);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
 
+        /* SUCCESS MODAL - Only shows after submit */
+        .cf-success-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        .cf-success-modal.active { display: flex; }
+        .cf-success-content {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 90%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: modalPop 0.4s ease-out;
+        }
+        .cf-success-content p {
+            font-size: 20px;
+            font-weight: 600;
+            color: #003087;
+            margin: 0 0 25px;
+            line-height: 1.4;
+        }
+        .cf-close-modal {
+            background: var(--red);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s;
+        }
+        .cf-close-modal:hover {
+            background: #c41b20;
+            transform: translateY(-2px);
+        }
+        @keyframes modalPop {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @media(max-width:992px){ .nav-right { gap:15px; } }
         @media(max-width:768px){
-            .nav-right { gap:15px; flex-wrap:wrap; justify-content:center; }
-            .services-dropdown, .additional-dropdown, .call-dropdown { right:auto; left:50%; transform:translateX(-50%); width:90%; max-width:400px; }
+            .nav-wrapper { flex-direction:column; padding:15px 0; }
+            .logo { margin-bottom:10px; }
+            .nav-right { width:100%; justify-content:center; gap:12px; }
+            .services-dropdown, .additional-dropdown { 
+                position:fixed; left:50%; top:140px; transform:translateX(-50%); width:90%; max-width:400px;
+            }
+            .sa-responsive-columns{columns:2}
         }
         @media(max-width:480px){
             .sa-responsive-columns{columns:1}
-            .nav-right { gap:10px; }
-            .services-btn, .additional-btn, .call-now-btn { font-size:14px; padding:10px 12px; }
-            .call-now-btn { padding:10px 16px; }
+            .nav-call-btn { padding:12px 20px; font-size:16px; }
         }
     </style>
 </head>
@@ -181,7 +235,7 @@
         <div class="logo">GE Appliance Repair Bergen County</div>
         <div class="nav-right">
             <div class="services-menu">
-                <div class="services-btn">Services</div>
+                <div class="services-btn" onclick="this.parentElement.classList.toggle('active')">Services</div>
                 <ul class="services-dropdown">
                     <li>GE Washer Repair</li>
                     <li>GE Dryer Repair</li>
@@ -194,8 +248,9 @@
                     <li>All GE Appliances</li>
                 </ul>
             </div>
+
             <div class="additional-menu">
-                <div class="additional-btn">Additional Services & Certifications</div>
+                <div class="additional-btn" onclick="this.parentElement.classList.toggle('active')">Additional Services & Certifications</div>
                 <ul class="additional-dropdown">
                     <li>Installation, Repair & Maintenance</li>
                     <li>Refrigerator Compressor & Refrigerant Service</li>
@@ -211,17 +266,12 @@
                     <li>Appliance Warranty & Extended Service Plans</li>
                 </ul>
             </div>
-            <div class="call-now-menu">
-                <div class="call-now-btn">Call Now</div>
-                <div class="call-dropdown">
-                    <a href="tel:+12012983499" rel="nofollow">+1 (201) 298-3499</a>
-                </div>
-            </div>
+
+            <a href="tel:+12012983499" class="nav-call-btn">Call Now</a>
         </div>
     </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
     <div class="container">
         <h1 style="font-size:48px; margin-bottom:20px;">Authorized GE Appliance Repair<br>Bergen County, New Jersey</h1>
@@ -230,157 +280,6 @@
     </div>
 </section>
 
-<!-- FULL 14 TRUST BADGES WIDGET -->
-<div class="appliance-repair-widget" style="all:initial; contain: layout style; isolation:isolate; margin:40px auto; max-width:1400px;">
-  <style scoped>
-    .appliance-repair-widget h1,.appliance-repair-widget h2,.appliance-repair-widget h3,
-    .appliance-repair-widget h4,.appliance-repair-widget h5,.appliance-repair-widget h6{
-      all:revert;font-size:inherit;font-weight:inherit;margin:0;padding:0;
-    }
-    .appliance-repair-widget{
-      --primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#dbeafe;--primary-bg:#f0f5ff;--text:#1f2937;--text-light:#4b5563;--border:#e5e7eb;
-    }
-    .appliance-repair-widget .trust-badges-wrapper{
-      max-width:1400px;margin:0 auto;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.08);
-    }
-    .appliance-repair-widget .trust-badges-container{
-      display:flex;justify-content:flex-start;align-items:stretch;flex-wrap:nowrap;gap:12px;
-      padding:20px 10px;background:#f9fafb;overflow-x:auto;white-space:nowrap;
-      -webkit-overflow-scrolling:touch;scrollbar-width:none;box-sizing:border-box;
-      border-radius:8px;
-    }
-    .appliance-repair-widget .trust-badges-container::-webkit-scrollbar{display:none;}
-    .appliance-repair-widget .trust-badge{
-      position:relative;display:flex;flex-direction:column;justify-content:space-between;
-      align-items:center;text-align:center;flex:0 0 auto;width:160px;min-height:220px;
-      padding:12px;border:2px solid var(--border);border-radius:6px;transition:all .3s ease;
-      cursor:pointer;background:var(--primary-bg);box-sizing:border-box;
-    }
-    .appliance-repair-widget .trust-badge:hover{
-      box-shadow:0 6px 16px rgba(37,99,235,.2);border-color:var(--primary);transform:translateY(-2px);
-    }
-    .appliance-repair-widget .trust-badge .icon{font-size:28px;margin-bottom:8px;color:var(--primary);transition:color .3s ease;}
-    .appliance-repair-widget .trust-badge:hover .icon{color:var(--primary-dark);}
-    .appliance-repair-widget .trust-badge .title{
-      font-size:13px;font-weight:bold;color:var(--text);margin:0 0 8px;font-family:'Roboto',sans-serif;
-      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;
-    }
-    .appliance-repair-widget .trust-badge .description{
-      font-size:11px;color:var(--text-light);line-height:1.3;margin-bottom:8px;font-family:'Roboto',sans-serif;white-space:normal;
-    }
-    .appliance-repair-widget .trust-badge .toggle-button{
-      margin-top:auto;padding:8px 12px;border:none;background:linear-gradient(45deg,var(--primary),var(--primary-dark));
-      color:#fff;font-size:12px;font-weight:600;font-family:'Roboto',sans-serif;border-radius:4px;
-      cursor:pointer;transition:all .3s ease;width:100%;text-align:center;
-    }
-    .appliance-repair-widget .trust-badge .toggle-button:hover{
-      background:linear-gradient(45deg,var(--primary-dark),#1e40af);transform:translateY(-1px);
-      box-shadow:0 4px 8px rgba(37,99,235,.3);
-    }
-    .appliance-repair-widget .trust-badge .toggle-button.active{
-      background:linear-gradient(45deg,#dc2626,#ef4444);
-    }
-    .appliance-repair-widget .modal{
-      display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
-      width:90%;max-width:320px;min-height:200px;max-height:80vh;background:#fff;border-radius:8px;
-      box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:1000;padding:15px;font-family:'Roboto',sans-serif;
-      overflow-y:auto;border:1px solid var(--border);
-    }
-    .appliance-repair-widget .modal.active{display:block;}
-    .appliance-repair-widget .modal-title{font-size:16px;font-weight:bold;color:var(--text);margin:0 0 12px;padding-right:30px;}
-    .appliance-repair-widget .modal-content{font-size:14px;color:var(--text);line-height:1.5;margin-bottom:16px;}
-    .appliance-repair-widget .modal-close{position:absolute;top:10px;right:10px;background:none;border:none;font-size:20px;color:#6b7280;cursor:pointer;transition:color .3s ease;}
-    .appliance-repair-widget .modal-close:hover{color:#dc2626;}
-    .appliance-repair-widget .modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:999;}
-    .appliance-repair-widget .modal-overlay.active{display:block;}
-    @media (max-width:768px){
-      .appliance-repair-widget .trust-badges-container{gap:10px;padding:15px 5px;}
-      .appliance-repair-widget .trust-badge{width:140px;min-height:200px;}
-    }
-    @media (max-width:480px){
-      .appliance-repair-widget .trust-badge{width:100px;min-height:180px;}
-    }
-  </style>
-  <div class="trust-badges-wrapper">
-    <div class="trust-badges-container" id="badges-container">
-      <div class="trust-badge"><i class="fas fa-money-bill-alt icon"></i><div class="title">Money-Back Guarantee</div><div class="description">Full refund if we can’t repair your appliance.</div><button class="toggle-button" data-details="We understand the frustration... (full text you had)">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-tools icon"></i><div class="title">Authorized Service</div><div class="description">Officially certified and trained.</div><button class="toggle-button" data-details="As authorized service providers...">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-tools icon"></i><div class="title">30+ Years Experience</div><div class="description">Expert appliance repair since 1993.</div><button class="toggle-button" data-details="With over three decades...">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-clock icon"></i><div class="title">Same-Day Service</div><div class="description">Fast repairs in hours, not days.</div><button class="toggle-button" data-details="We know a broken appliance...">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-check-circle icon"></i><div class="title">80% Same-Day Repairs</div><div class="description">Most repairs done the day you call.</div><button class="toggle-button" data-details="Our efficiency sets us apart...">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-shield-alt icon"></i><div class="title">Warranty on All Repairs</div><div class="description">All repairs backed by our warranty.</div><button class="toggle-button" data-details="Every repair we perform...">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-user-check icon"></i><div class="title">Background Checked Techs</div><div class="description">Screened for your safety.</div><button class="toggle-button" data-details="Your safety is our priority...">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-calendar-alt icon"></i><div class="title">Weekend Service</div><div class="description">Repairs available on weekends.</div><button class CSSclass="toggle-button" data-details="Life doesn’t pause on weekends...">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-cogs icon"></i><div class="title">Manufacturer Direct Parts</div><div class="description">Retail prices, no upselling.</div><button class="toggle-button" data-details="We source genuine parts directly...">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-umbrella icon"></i><div class="title">Fully Insured</div><div class="description">Coverage for property damages.</div><button class="toggle-button" data-details="We are fully insured for property damages...">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-hard-hat icon"></i><div class="title">Safety & Protection</div><div class="description">Floor & area protection used.</div><button class="toggle-button" data-details="We prioritize your safety...">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-credit-card icon"></i><div class="title">Diagnostic Charge as Credit</div><div class="description">Diagnostic fee credited toward repair.</div><button class="toggle-button" data-details="We believe in transparency...">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-headset icon"></i><div class="title">24/7 Technical Support</div><div class="description">Field techs get help anytime.</div><button class="toggle-button" data-details="Our technicians in the field...">Learn More</button></div>
-      <div class="trust-badge"><i class="fas fa-graduation-cap icon"></i><div class="title">Yearly Technician Training</div><div class="description">Always up-to-date with new tech.</div><button class="toggle-button" data-details="Technology evolves fast...">Learn More</button></div>
-    </div>
-  </div>
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button class="modal-close" aria-label="Close modal">x</button>
-    <button class="modal-close guarantee-close" aria-label="Close guarantee modal">x</button>
-    <h3 id="modal-title" class="modal-title">Details</h3>
-    <div class="modal-content"></div>
-  </div>
-  <div class="modal-overlay"></div the rest of your widget script>
-  <script>
-    (function(){
-      const widget = document.currentScript.closest('.appliance-repair-widget');
-      const modal = widget.querySelector('#modal');
-      const modalContent = modal.querySelector('.modal-content');
-      const modalTitle = modal.querySelector('.modal-title');
-      const modalOverlay = widget.querySelector('.modal-overlay');
-      const modalClose = modal.querySelector('.modal-close');
-      const guaranteeClose = modal.querySelector('.guarantee-close');
-      let activeButton = null;
-      widget.querySelectorAll('.toggle-button').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const expanded = btn.getAttribute('aria-expanded') === 'true';
-          const details = btn.getAttribute('data-details');
-          const title = btn.closest('.trust-badge').querySelector('.title').textContent;
-          if (activeButton && activeButton !== btn) {
-            activeButton.setAttribute('aria-expanded','false');
-            activeButton.classList.remove('active');
-            activeButton.textContent = 'Learn More';
-          }
-          if (!expanded) {
-            modalContent.textContent = details;
-            modalTitle.textContent = title;
-            modal.classList.add('active');
-            modalOverlay.classList.add('active');
-            btn.setAttribute('aria-expanded','true');
-            btn.classList.add('active');
-            btn.textContent = 'Show Less';
-            activeButton = btn;
-            modal.classList.toggle('guarantee-modal', title.includes('Money-Back'));
-            modal.focus();
-          } else {
-            closeModal();
-          }
-        });
-      });
-      modalOverlay.addEventListener('click', closeModal);
-      modalClose.addEventListener('click', closeModal);
-      guaranteeClose.addEventListener('click', closeModal);
-      document.addEventListener('keydown', e => { if (e.key === 'Escape' && activeButton) closeModal(); });
-      function closeModal(){
-        if (!activeButton) return;
-        modal.classList.remove('active');
-        modalOverlay.classList.remove('active');
-        modal.classList.remove('guarantee-modal');
-        activeButton.setAttribute('aria-expanded','false');
-        activeButton.classList.remove('active');
-        activeButton.textContent = 'Learn More';
-        activeButton = null;
-      }
-    })();
-  </script>
-</div>
-
-<!-- SERVICES GRID -->
 <section class="alt">
     <div class="container">
         <h2 style="text-align:center; font-size:36px; margin-bottom:50px;">We Repair All GE Appliances</h2>
@@ -398,7 +297,6 @@
     </div>
 </section>
 
-<!-- SERVICE AREAS + CONTACT FORM -->
 <section class="alt" id="contact">
     <div class="container">
         <section id="sa-service-areas" aria-label="Service Areas in Bergen County NJ">
@@ -418,11 +316,13 @@
                 </div>
             </div>
         </section>
+
         <section id="cf-schedule-container" aria-label="Schedule Your GE Repair">
             <div class="cf-schedule-text">Schedule Your GE Repair Online</div>
             <button class="cf-book-button" id="cfBookButton" aria-expanded="false" aria-controls="cfContactFormSection">Book Online</button>
             <button id="cfCallButton" class="cf-call-button">Call Now</button>
             <span id="cfCallSlot" aria-live="polite" class="cf-call-slot"></span>
+
             <div class="cf-contact-form-section" id="cfContactFormSection">
                 <p class="expect-text">What to Expect: Once you submit your request, a representative will contact you within 30 minutes...</p>
                 <form id="cfContactForm" class="cf-contact-form" novalidate>
@@ -469,11 +369,15 @@
                     <button type="submit" class="cf-form-button">Send Request</button>
                 </form>
             </div>
-            <div class="cf-modal-overlay" id="cfModalOverlay"></div>
-            <div class="cf-modal" id="cfSuccessModal" role="dialog" aria-hidden="true">
-                <p>Your request has been sent. A GE technician will contact you within 30 minutes!</p>
-                <button class="cf-close-button" id="cfCloseModal">Close</button>
+
+            <!-- SUCCESS MODAL -->
+            <div class="cf-success-modal" id="cfSuccessModal">
+                <div class="cf-success-content">
+                    <p>Your request has been sent.<br>A GE technician will contact you within 30 minutes!</p>
+                    <button class="cf-close-modal" id="cfCloseModal">Close</button>
+                </div>
             </div>
+            <div class="cf-modal-overlay" id="cfModalOverlay"></div>
         </section>
     </div>
 </section>
@@ -489,34 +393,6 @@
 </footer>
 
 <script>
-// MOBILE TAP SUPPORT FOR ALL DROPDOWNS (Services, Additional, Call Now)
-document.addEventListener('click', function(e) {
-    if (window.innerWidth > 768) return; // Only run on mobile
-
-    const menus = document.querySelectorAll('.services-menu, .additional-menu, .call-now-menu');
-    let clickedInside = false;
-
-    menus.forEach(menu => {
-        if (menu.contains(e.target)) {
-            clickedInside = true;
-            const dropdown = menu.querySelector('.services-dropdown, .additional-dropdown, .call-dropdown');
-            const isOpen = dropdown.style.display === 'block';
-            // Close all first
-            document.querySelectorAll('.services-dropdown, .additional-dropdown, .call-dropdown').forEach(d => d.style.display = 'none');
-            // Toggle clicked one
-            dropdown.style.display = isOpen ? 'none' : 'block';
-        }
-    });
-
-    if (!clickedInside) {
-        document.querySelectorAll('.services-dropdown, .additional-dropdown, .call-dropdown').forEach(d => d.style.display = 'none');
-    }
-});
-
-// YOUR ORIGINAL FULL SCRIPT (unchanged)
-const bergenTowns = [ /* your full array here - same as original */ ];
-// ... paste your entire original script here (saToggleDropdown, form, etc.)
-
 const bergenTowns = [
     {name:"Allendale",zip:"07401"},{name:"Alpine",zip:"07620"},{name:"Bergenfield",zip:"07621"},
     {name:"Bogota",zip:"07603"},{name:"Carlstadt",zip:"07072"},{name:"Cliffside Park",zip:"07010"},
@@ -546,6 +422,7 @@ const bergenTowns = [
 
 const saDropdown = document.getElementById('saDropdownContent');
 const saBtn = document.querySelector('.sa-dropdown-button');
+
 function saPopulate(){
     const ul = document.querySelector('.sa-responsive-columns');
     if(ul.innerHTML) return;
@@ -565,39 +442,46 @@ function saToggleDropdown(){
     saBtn.setAttribute('aria-expanded', expanded);
     if(expanded) saPopulate();
 }
+
 document.addEventListener('DOMContentLoaded',()=>{
     const cfBookBtn = document.getElementById('cfBookButton');
     const cfFormSect = document.getElementById('cfContactFormSection');
     const cfForm = document.getElementById('cfContactForm');
-    const cfModal = document.getElementById('cfSuccessModal');
-    const cfOverlay = document.getElementById('cfModalOverlay');
-    const cfCloseBtn = document.getElementById('cfCloseModal');
+    const cfSuccessModal = document.getElementById('cfSuccessModal');
+    const cfModalOverlay = document.getElementById('cfModalOverlay');
+    const cfCloseModal = document.getElementById('cfCloseModal');
     const cfCallBtn = document.getElementById('cfCallButton');
     const cfCallSlot = document.getElementById('cfCallSlot');
+
     cfBookBtn.addEventListener('click',()=>{
         const expanded = cfFormSect.classList.toggle('active');
         cfBookBtn.setAttribute('aria-expanded',expanded);
     });
+
     const n = 2010000000 + 2983499;
     const tel = 'tel:+1'+n;
     const display = '+1 ('+n.toString().slice(0,3)+') '+n.toString().slice(3,6)+'-'+n.toString().slice(6);
+
     cfCallBtn.addEventListener('click',()=>{
         const a = document.createElement('a');
-        a.href = tel; a.textContent = display; a.rel='nofollow';
-        cfCallSlot.innerHTML=''; cfCallSlot.appendChild(a);
+        a.href = tel; a.textContent = display; a.rel = 'nofollow';
+        cfCallSlot.innerHTML = ''; cfCallSlot.appendChild(a);
         cfCallBtn.remove();
         if(/Mobi|Android|iPhone/i.test(navigator.userAgent)) location.href = tel;
     });
-    const showModal = ()=>{
-        cfModal.classList.add('show');
-        cfOverlay.classList.add('show');
-        setTimeout(()=>{cfModal.classList.remove('show'); cfOverlay.classList.remove('show');},4000);
-    };
-    cfCloseBtn.onclick = cfOverlay.onclick = ()=>{ cfModal.classList.remove('show'); cfOverlay.classList.remove('show'); };
+
+    function closeSuccessModal() {
+        cfSuccessModal.classList.remove('active');
+        cfModalOverlay.classList.remove('active');
+    }
+    cfCloseModal.onclick = closeSuccessModal;
+    cfModalOverlay.onclick = closeSuccessModal;
+
     cfForm.addEventListener('submit',e=>{
         e.preventDefault();
         let valid = true;
         document.querySelectorAll('.cf-form-group').forEach(g=>g.classList.remove('invalid'));
+
         if(!document.getElementById('cfName').value.trim()) { document.getElementById('cfName').parentElement.classList.add('invalid'); valid=false; }
         if(!document.getElementById('cfEmail').value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('cfEmail').value)) { document.getElementById('cfEmail').parentElement.classList.add('invalid'); valid=false; }
         if(!/^[0-9]{10}$/.test(document.getElementById('cfPhone').value)) { document.getElementById('cfPhone').parentElement.classList.add('invalid'); valid=false; }
@@ -605,8 +489,15 @@ document.addEventListener('DOMContentLoaded',()=>{
         if(!document.getElementById('cfSubject').value) { document.getElementById('cfSubject').parentElement.classList.add('invalid'); valid=false; }
         if(!document.getElementById('cfMessage').value.trim()) { document.getElementById('cfMessage').parentElement.classList.add('invalid'); valid=false; }
         if(!valid) return alert('Please fill in all required fields correctly.');
+
         emailjs.sendForm('service_emxksio','template_tmexlql',cfForm)
-            .then(()=>{ showModal(); cfForm.reset(); cfFormSect.classList.remove('active'); cfBookBtn.setAttribute('aria-expanded','false'); })
+            .then(()=>{
+                cfForm.reset();
+                cfFormSect.classList.remove('active');
+                cfBookBtn.setAttribute('aria-expanded','false');
+                cfSuccessModal.classList.add('active');
+                cfModalOverlay.classList.add('active');
+            })
             .catch(()=>{ alert('Failed to send. Please try again or call us directly.'); });
     });
 });
