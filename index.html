@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -26,7 +27,6 @@
     <script type="text/javascript">
         (function(){ emailjs.init({ publicKey: "zfCrLmZU8eK9CuZcs" }); })();
     </script>
-
     <!-- Schema -->
     <script type="application/ld+json">
     {
@@ -71,7 +71,6 @@
       }
     }
     </script>
-
     <style>
         :root { --blue: #003087; --red: #e41e26; --gray: #f8f9fa; }
         body { font-family: 'Inter', sans-serif; margin:0; color:#333; background:#fff; line-height:1.6; }
@@ -91,7 +90,6 @@
         .towns { column-count:3; margin:30px 0; font-size:15px; }
         @media(max-width:768px){ .towns{column-count:2;} }
         @media(max-width:480px){ .towns{column-count:1;} }
-
         /* === NEW FORM + SERVICE AREAS STYLES (unchanged from your code) === */
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         #sa-service-areas{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px;position:relative;animation:fadeIn .8s ease-out forwards}
@@ -114,7 +112,6 @@
         .sa-zip-dropdown{font-size:13px;color:#444;margin-top:6px;padding-left:15px;max-height:0;overflow:hidden;opacity:0;transform:translateY(-10px);transition:max-height .4s,opacity .4s,transform .4s}
         .sa-zip-dropdown.active{max-height:30px;opacity:1;transform:translateY(0)}
         @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
         #cf-schedule-container{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);padding:20px;margin:3rem auto 0;max-width:1200px}
         .cf-schedule-text{font-family:'Montserrat',sans-serif;font-size:1.5rem;color:#2A2A2A;font-weight:600;margin:0 0 .5rem;text-align:center}
         .cf-book-button,.cf-call-button{display:block;padding:.5rem 1rem;background:linear-gradient(45deg,#003087,#00205B);color:#fff;font-family:'Montserrat',sans-serif;font-weight:600;font-size:1rem;border-radius:8px;border:none;cursor:pointer;margin:0 auto 1rem;transition:all .3s;width:100%;max-width:200px;height:60px;display:flex;align-items:center;justify-content:center}
@@ -162,14 +159,12 @@
     </style>
 </head>
 <body>
-
 <header>
     <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
         <div class="logo">GE Appliance Repair Bergen County</div>
         <div style="font-weight:600;">Open 7 Days • 7 AM – 9 PM</div>
     </div>
 </header>
-
 <section class="hero">
     <div class="container">
         <h1 style="font-size:48px; margin-bottom:20px;">Authorized GE Appliance Repair<br>Bergen County, New Jersey</h1>
@@ -177,7 +172,6 @@
         <a href="#contact" class="btn">Request Service Today</a>
     </div>
 </section>
-
 <section class="alt">
     <div class="container">
         <h2 style="text-align:center; font-size:36px; margin-bottom:50px;">We Repair All GE Appliances</h2>
@@ -194,20 +188,11 @@
     </div>
 </section>
 
-<section>
-    <div class="container" style="text-align:center;">
-        <h2 style="font-size:36px; margin-bottom:30px;">Serving All 70 Towns in Bergen County</h2>
-        <p style="font-size:18px; max-width:900px; margin:0 auto 40px;">Same-day GE repair service available in Mahwah, Ridgewood, Paramus, Hackensack, Fort Lee, Fair Lawn, Teaneck, Englewood, and every town in Bergen County.</p>
-        <div class="towns">
-            Allendale • Alpine • Bergenfield • Bogota • Carlstadt • Cliffside Park • Closter • Cresskill • Demarest • Dumont • East Rutherford • Edgewater • Elmwood Park • Emerson • Englewood • Englewood Cliffs • Fair Lawn • Fairview • Fort Lee • Franklin Lakes • Garfield • Glen Rock • Hackensack • Harrington Park • Hasbrouck Heights • Haworth • Hillsdale • Ho-Ho-Kus • Leonia • Little Ferry • Lodi • Lyndhurst • Mahwah • Maywood • Midland Park • Montvale • Moonachie • New Milford • North Arlington • Northvale • Norwood • Oakland • Old Tappan • Oradell • Palisades Park • Paramus • Park Ridge • Ramsey • Ridgefield • Ridgefield Park • Ridgewood • River Edge • River Vale • Rochelle Park • Rockleigh • Rutherford • Saddle Brook • Saddle River • South Hackensack • Teaneck • Tenafly • Teterboro • Upper Saddle River • Waldwick • Wallington • Washington Township • Westwood • Woodcliff Lake • Wood-Ridge • Wyckoff
-        </div>
-    </div>
-</section>
+<!-- THE ENTIRE "Serving All 70 Towns in Bergen County" SECTION HAS BEEN REMOVED -->
 
 <!-- YOUR NEW FULL FORM + SERVICE AREAS DROPDOWN -->
 <section class="alt" id="contact">
     <div class="container">
-
         <!-- SERVICE AREAS DROPDOWN -->
         <section id="sa-service-areas" aria-label="Service Areas in Bergen County NJ">
             <h2>Service Areas – All of Bergen County, NJ</h2>
@@ -226,14 +211,12 @@
                 </div>
             </div>
         </section>
-
         <!-- FULL SCHEDULING FORM -->
         <section id="cf-schedule-container" aria-label="Schedule Your GE Repair">
             <div class="cf-schedule-text">Schedule Your GE Repair Online</div>
             <button class="cf-book-button" id="cfBookButton" aria-expanded="false" aria-controls="cfContactFormSection">Book Online</button>
             <button id="cfCallButton" class="cf-call-button">Call Now</button>
             <span id="cfCallSlot" aria-live="polite" class="cf-call-slot"></span>
-
             <div class="cf-contact-form-section" id="cfContactFormSection">
                 <p class="expect-text">What to Expect: Once you submit your request, a representative will contact you within 30 minutes to discuss available dates, service details, and associated charges before confirming your appointment.</p>
                 <form id="cfContactForm" class="cf-contact-form" novalidate>
@@ -280,7 +263,6 @@
                     <button type="submit" class="cf-form-button">Send Request</button>
                 </form>
             </div>
-
             <div class="cf-modal-overlay" id="cfModalOverlay"></div>
             <div class="cf-modal" id="cfSuccessModal" role="dialog" aria-hidden="true">
                 <p>Your request has been sent. A GE technician will contact you within 30 minutes!</p>
@@ -289,7 +271,6 @@
         </section>
     </div>
 </section>
-
 <footer>
     <div class="container">
         <p style="font-size:18px; margin-bottom:20px;"><strong>GE Appliance Repair Bergen County NJ</strong></p>
@@ -299,7 +280,6 @@
         <p style="margin-top:40px; color:#777;">© 2025 GE Appliance Repair Bergen County. All Rights Reserved.</p>
     </div>
 </footer>
-
 <script>
 /* ALL 70 BERGEN COUNTY TOWNS + FORM LOGIC */
 const bergenTowns = [
@@ -328,10 +308,8 @@ const bergenTowns = [
     {name:"Westwood",zip:"07675"},{name:"Woodcliff Lake",zip:"07677"},{name:"Wood-Ridge",zip:"07075"},
     {name:"Wyckoff",zip:"07481"}
 ].sort((a,b)=>a.name.localeCompare(b.name));
-
 const saDropdown = document.getElementById('saDropdownContent');
 const saBtn = document.querySelector('.sa-dropdown-button');
-
 function saPopulate(){
     const ul = document.querySelector('.sa-responsive-columns');
     if(ul.innerHTML) return;
@@ -351,7 +329,6 @@ function saToggleDropdown(){
     saBtn.setAttribute('aria-expanded', expanded);
     if(expanded) saPopulate();
 }
-
 document.addEventListener('DOMContentLoaded',()=>{
     const cfBookBtn = document.getElementById('cfBookButton');
     const cfFormSect = document.getElementById('cfContactFormSection');
@@ -361,16 +338,13 @@ document.addEventListener('DOMContentLoaded',()=>{
     const cfCloseBtn = document.getElementById('cfCloseModal');
     const cfCallBtn = document.getElementById('cfCallButton');
     const cfCallSlot = document.getElementById('cfCallSlot');
-
     cfBookBtn.addEventListener('click',()=>{
         const expanded = cfFormSect.classList.toggle('active');
         cfBookBtn.setAttribute('aria-expanded',expanded);
     });
-
     const n = 2010000000 + 2983499;
     const tel = 'tel:+1'+n;
     const display = '+1 ('+n.toString().slice(0,3)+') '+n.toString().slice(3,6)+'-'+n.toString().slice(6);
-
     cfCallBtn.addEventListener('click',()=>{
         const a = document.createElement('a');
         a.href = tel; a.textContent = display; a.rel='nofollow';
@@ -378,28 +352,23 @@ document.addEventListener('DOMContentLoaded',()=>{
         cfCallBtn.remove();
         if(/Mobi|Android|iPhone/i.test(navigator.userAgent)) location.href = tel;
     });
-
     const showModal = ()=>{
         cfModal.classList.add('show');
         cfOverlay.classList.add('show');
         setTimeout(()=>{cfModal.classList.remove('show'); cfOverlay.classList.remove('show');},4000);
     };
     cfCloseBtn.onclick = cfOverlay.onclick = ()=>{ cfModal.classList.remove('show'); cfOverlay.classList.remove('show'); };
-
     cfForm.addEventListener('submit',e=>{
         e.preventDefault();
         let valid = true;
         document.querySelectorAll('.cf-form-group').forEach(g=>g.classList.remove('invalid'));
-
         if(!document.getElementById('cfName').value.trim()) { document.getElementById('cfName').parentElement.classList.add('invalid'); valid=false; }
         if(!document.getElementById('cfEmail').value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('cfEmail').value)) { document.getElementById('cfEmail').parentElement.classList.add('invalid'); valid=false; }
         if(!/^[0-9]{10}$/.test(document.getElementById('cfPhone').value)) { document.getElementById('cfPhone').parentElement.classList.add('invalid'); valid=false; }
         if(!document.getElementById('cfAddress').value.trim()) { document.getElementById('cfAddress').parentElement.classList.add('invalid'); valid=false; }
         if(!document.getElementById('cfSubject').value) { document.getElementById('cfSubject').parentElement.classList.add('invalid'); valid=false; }
         if(!document.getElementById('cfMessage').value.trim()) { document.getElementById('cfMessage').parentElement.classList.add('invalid'); valid=false; }
-
         if(!valid) return alert('Please fill in all required fields correctly.');
-
         emailjs.sendForm('service_emxksio','template_tmexlql',cfForm)
             .then(()=>{ showModal(); cfForm.reset(); cfFormSect.classList.remove('active'); cfBookBtn.setAttribute('aria-expanded','false'); })
             .catch(()=>{ alert('Failed to send. Please try again or call us directly.'); });
