@@ -7,11 +7,10 @@
     <meta name="description" content="Authorized GE appliance repair in Bergen County, NJ. Same-day service for washers, dryers, refrigerators, dishwashers, ovens, cooktops, microwaves, and wine coolers.">
     <link rel="canonical" href="https://geappliancerepairbergencounty.com/">
     <link rel="icon" type="image/x-icon" href="https://geappliancerepairbergencounty.com/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>(function(){ emailjs.init({ publicKey: "zfCrLmZU8eK9CuZcs" }); })();</script>
-
     <style>
         :root { --blue: #003087; --red: #e41e26; --gray: #f8f9fa; }
         body { font-family: 'Inter', sans-serif; margin:0; color:#333; background:#fff; line-height:1.6; }
@@ -21,14 +20,12 @@
         .logo { font-size:26px; font-weight:700; }
         .nav-wrapper { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
         .nav-right { display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
-
         .services-menu { position:relative; }
         .services-btn {
             color:white; font-weight:600; cursor:pointer; padding:12px 20px; border-radius:6px; transition:all .3s;
             background:rgba(255,255,255,0.1); white-space:nowrap;
         }
         .services-btn:hover { background:rgba(255,255,255,0.2); }
-
         .services-dropdown {
             display:none; position:fixed; left:50%; top:90px; transform:translateX(-50%);
             width:90%; max-width:420px; background:var(--blue); border-radius:12px;
@@ -36,36 +33,28 @@
             max-height:78vh; overflow-y:auto;
         }
         .services-menu.active .services-dropdown { display:block; }
-
         .services-dropdown li {
             padding:14px 28px; color:#eee; font-size:15px; transition:all .3s; cursor:pointer;
         }
         .services-dropdown li:hover { background:var(--red); color:white; padding-left:38px; }
-
         .submenu-toggle {
             display:flex; justify-content:space-between; align-items:center; font-weight:700;
             background:rgba(255,255,255,0.15); margin:10px 20px; border-radius:8px; padding:14px 20px !important;
         }
         .submenu-toggle i { transition:transform .3s; font-size:18px; }
         .submenu-toggle.active i { transform:rotate(90deg); }
-
         .additional-submenu {
             max-height:0; overflow:hidden; transition:max-height .5s ease;
             background:rgba(0,0,0,0.2); margin:0 20px 10px; border-radius:8px;
         }
         .additional-submenu.active { max-height:1200px; padding:10px 0; }
-
-        .additional-submenu li {
-            padding-left:50px !important;
-        }
+        .additional-submenu li { padding-left:50px !important; }
         .additional-submenu li:hover { padding-left:60px !important; }
-
         .nav-call-btn {
             background:var(--red); color:white; padding:12px 28px; border-radius:6px; font-weight:700;
             text-decoration:none; font-size:17px; transition:all .3s;
         }
         .nav-call-btn:hover { background:#c41b20; transform:translateY(-2px); }
-
         .hero { background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('https://geappliancerepairbergencounty.com/assets/img/ge-repair-bergen-county.jpg') center/cover no-repeat; color:white; text-align:center; padding:160px 20px 100px; margin-top:80px; }
         .btn { background:var(--red); color:white; padding:14px 34px; border-radius:6px; font-weight:600; text-decoration:none; display:inline-block; margin:15px; font-size:18px; }
         section { padding:90px 0; }
@@ -77,24 +66,51 @@
         .service:hover i { color:var(--red); }
         footer { background:#111; color:#ccc; padding:60px 0 30px; text-align:center; }
 
-        /* Service Areas - ZIP CODES FULLY VISIBLE */
-        #sa-service-areas{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px;position:relative}
-        #sa-service-areas h2{font-size:34px;text-align:center;color:inherit;margin-bottom:5px}
-        #sa-service-areas p{font-size:16px;text-align:center;margin-bottom:20px}
+        /* NEW SERVICE AREAS SECTION (replaces old one) */
+        #sa-service-areas{
+            font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+            background:transparent;border:2px solid #808080;border-radius:12px;
+            box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px;
+            position:relative;animation:fadeIn .8s ease-out forwards
+        }
+        #sa-service-areas h2{font-size:34px;text-align:center;color:inherit;margin-bottom:5px;
+            text-shadow:0 2px 4px rgba(0,0,0,.3);transition:transform .3s,color .3s}
+        #sa-service-areas h2:hover{color:#ffd700;transform:scale(1.05)}
+        #sa-service-areas p{font-size:16px;text-align:center;margin-bottom:20px;
+            text-shadow:0 1px 3px rgba(0,0,0,.2)}
         .sa-dropdown-container{text-align:center;margin-bottom:20px}
-        .sa-dropdown-button{padding:14px 32px;border:none;background:linear-gradient(45deg,#003087,#0052cc);color:#fff;font-weight:600;font-size:18px;border-radius:10px;cursor:pointer;transition:all .3s;box-shadow:0 4px 15px rgba(0,48,135,.4)}
-        .sa-dropdown-button:hover{background:linear-gradient(45deg,#002266,#003f99);transform:translateY(-3px)}
-        .sa-dropdown-content{opacity:0;max-height:0;overflow:hidden;transition:all .5s ease}
-        .sa-dropdown-content.active{opacity:1;max-height:2200px;padding:30px 20px}
-        .sa-slide ul{background:rgba(255,255,255,.95);border-radius:12px;padding:25px;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+        .sa-dropdown-button{
+            padding:14px 32px;border:none;background:linear-gradient(45deg,#003087,#0052cc);
+            color:#fff;font-weight:600;font-size:18px;border-radius:10px;cursor:pointer;
+            transition:all .3s;box-shadow:0 4px 15px rgba(0,48,135,.4);
+            display:inline-flex;align-items:center;gap:10px
+        }
+        .sa-dropdown-button:hover{
+            background:linear-gradient(45deg,#002266,#003f99);
+            transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,48,135,.6)
+        }
+        .sa-dropdown-content{opacity:0;height:0;overflow:hidden;transition:opacity .5s,height .5s,transform .5s;
+            transform:translateY(-10px);background:transparent}
+        .sa-dropdown-content.active{opacity:1;height:auto;transform:translateY(0);padding:20px 0}
+        .sa-slide h2{font-size:28px;text-align:center;margin-bottom:15px;
+            text-shadow:0 1px 3px rgba(0,0,0,.2)}
+        .sa-slide ul{background:rgba(255,255,255,.95);border-radius:12px;padding:25px;
+            box-shadow:0 4px 20px rgba(0,0,0,.1);transition:transform .3s}
+        .sa-slide ul:hover{transform:translateY(-5px)}
         .sa-responsive-columns{list-style:none;padding:0;margin:0;column-gap:30px;columns:3}
-        .sa-responsive-columns li{padding:14px 12px;margin:8px 0;border-radius:10px;background:rgba(240,244,255,.9);transition:all .3s;cursor:pointer;position:relative}
-        .sa-responsive-columns li:hover{background:#d4e4ff;transform:scale(1.02)}
-        .sa-responsive-columns h3{margin:0;font-size:16px;color:#1e3c72;font-weight:600}
-        .sa-zip-dropdown{font-size:14px;color:#444;margin-top:8px;padding-left:15px;max-height:0;overflow:hidden;opacity:0;transition:all .4s ease;background:rgba(255,255,255,0.8);border-radius:6px;padding:6px 10px}
-        .sa-zip-dropdown.active{max-height:60px;opacity:1;padding:10px 12px;margin-top:10px}
+        .sa-responsive-columns li{padding:12px 15px;margin:8px 0;border-radius:10px;
+            background:rgba(240,244,255,.9);transition:all .3s;cursor:pointer;
+            box-shadow:0 2px 8px rgba(0,0,0,.08)}
+        .sa-responsive-columns li:hover{background:#d4e4ff;transform:scale(1.03);
+            box-shadow:0 4px 12px rgba(0,0,0,.15)}
+        .sa-responsive-columns h3{margin:0 0 6px;font-size:17px;color:#1e3c72;font-weight:600}
+        .sa-zip-dropdown{font-size:14px;color:#003087;font-weight:600;
+            max-height:0;overflow:hidden;opacity:0;transition:all .4s ease;
+            transform:translateY(-10px)}
+        .sa-zip-dropdown.active{max-height:40px;opacity:1;transform:translateY(0);padding-top:4px}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-        /* Contact Form */
+        /* Contact Form (kept your existing styles with minor tweaks) */
         #cf-schedule-container{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);padding:20px;margin:3rem auto 0;max-width:1200px}
         .cf-schedule-text{font-family:'Montserrat',sans-serif;font-size:1.5rem;color:#2A2A2A;font-weight:600;text-align:center;margin-bottom:15px}
         .cf-book-button,.cf-call-button{display:block;padding:12px 20px;background:linear-gradient(45deg,#003087,#00205B);color:#fff;font-weight:600;border-radius:8px;border:none;cursor:pointer;margin:10px auto;width:100%;max-width:220px;height:60px;display:flex;align-items:center;justify-content:center;transition:all .3s}
@@ -109,7 +125,6 @@
         .cf-form-group textarea{resize:vertical;min-height:100px}
         .cf-form-button{background:linear-gradient(45deg,#003087,#00205B);color:#fff;font-weight:600;border:none;border-radius:8px;cursor:pointer;width:220px;height:60px;margin:20px auto 0;display:flex;align-items:center;justify-content:center;transition:all .3s}
         .cf-form-button:hover{background:linear-gradient(45deg,#00205B,#001A45);transform:translateY(-3px)}
-
         .cf-success-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:2000;align-items:center;justify-content:center}
         .cf-success-modal.active{display:flex}
         .cf-success-content{background:white;padding:40px 30px;border-radius:12px;text-align:center;max-width:90%;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
@@ -123,11 +138,12 @@
             .services-dropdown{top:100px}
             .sa-responsive-columns{columns:2}
         }
-        @media(max-width:480px){.sa-responsive-columns{columns:1}}
+        @media(max-width:480px){
+            .sa-responsive-columns{columns:1}
+        }
     </style>
 </head>
 <body>
-
 <header>
     <div class="container nav-wrapper">
         <div class="logo">GE Appliance Repair Bergen County</div>
@@ -144,7 +160,6 @@
                     <li>GE Microwave Repair</li>
                     <li>GE Wine Cooler Repair</li>
                     <li>All GE Appliances</li>
-
                     <li class="submenu-toggle" id="additionalToggle">
                         Additional Services <i class="fas fa-chevron-right"></i>
                     </li>
@@ -196,11 +211,17 @@
 
 <section class="alt" id="contact">
     <div class="container">
+
+        <!-- NEW SERVICE AREAS SECTION -->
         <section id="sa-service-areas">
             <h2>Service Areas – All of Bergen County, NJ</h2>
             <p>We proudly serve <strong>every single town and municipality</strong> in Bergen County with fast, reliable, same-day GE appliance repair.</p>
+          
             <div class="sa-dropdown-container">
-                <button class="sa-dropdown-button" id="saToggleBtn">View All Bergen County Service Areas</button>
+                <button class="sa-dropdown-button" id="saToggleBtn" aria-expanded="false" aria-controls="saDropdownContent">
+                    View All Bergen County Service Areas
+                </button>
+              
                 <div class="sa-dropdown-content" id="saDropdownContent">
                     <div class="sa-slide">
                         <h2>All Bergen County NJ Towns We Service</h2>
@@ -210,15 +231,13 @@
             </div>
         </section>
 
+        <!-- CONTACT / SCHEDULING FORM (unchanged) -->
         <section id="cf-schedule-container">
             <div class="cf-schedule-text">Schedule Your GE Repair Online</div>
             <button class="cf-book-button" id="cfBookButton">Book Online</button>
             <button class="cf-call-button" id="cfCallButton">Call Now</button>
-
             <div class="cf-contact-form-section" id="cfContactFormSection">
                 <p class="expect-text">What to Expect: Once you submit your request, a representative will contact you within 30 minutes...</p>
-
-                <!-- FINAL FIXED FORM - ALL DATA SENT -->
                 <form id="cfContactForm" class="cf-contact-form">
                     <div class="cf-form-group">
                         <label for="cfName">Name *</label>
@@ -257,7 +276,6 @@
                     <button type="submit" class="cf-form-button">Send Request</button>
                 </form>
             </div>
-
             <div class="cf-success-modal" id="cfSuccessModal">
                 <div class="cf-success-content">
                     <p>Your request has been sent.<br>A GE technician will contact you within 30 minutes!</p>
@@ -266,6 +284,7 @@
             </div>
             <div class="cf-modal-overlay" id="cfModalOverlay"></div>
         </section>
+
     </div>
 </section>
 
@@ -278,62 +297,70 @@
 </footer>
 
 <script>
-// FULL SERVICE AREAS LIST
+// FULL LIST OF BERGEN COUNTY TOWNS (sorted alphabetically)
 const bergenTowns = [
-    {name:"Allendale",zip:"07401"},{name:"Alpine",zip:"07620"},{name:"Bergenfield",zip:"07621"},{name:"Bogota",zip:"07603"},
-    {name:"Carlstadt",zip:"07072"},{name:"Cliffside Park",zip:"07010"},{name:"Closter",zip:"07624"},{name:"Cresskill",zip:"07626"},
-    {name:"Demarest",zip:"07627"},{name:"Dumont",zip:"07628"},{name:"East Rutherford",zip:"07073"},{name:"Edgewater",zip:"07020"},
-    {name:"Elmwood Park",zip:"07407"},{name:"Emerson",zip:"07630"},{name:"Englewood",zip:"07631"},{name:"Englewood Cliffs",zip:"07632"},
-    {name:"Fair Lawn",zip:"07410"},{name:"Fairview",zip:"07022"},{name:"Fort Lee",zip:"07024"},{name:"Franklin Lakes",zip:"07417"},
-    {name:"Garfield",zip:"07026"},{name:"Glen Rock",zip:"07452"},{name:"Hackensack",zip:"07601"},{name:"Harrington Park",zip:"07640"},
-    {name:"Hasbrouck Heights",zip:"07604"},{name:"Haworth",zip:"07641"},{name:"Hillsdale",zip:"07642"},{name:"Ho-Ho-Kus",zip:"07423"},
-    {name:"Leonia",zip:"07605"},{name:"Little Ferry",zip:"07643"},{name:"Lodi",zip:"07644"},{name:"Lyndhurst",zip:"07071"},
-    {name:"Mahwah",zip:"07430"},{name:"Maywood",zip:"07607"},{name:"Midland Park",zip:"07432"},{name:"Montvale",zip:"07645"},
-    {name:"Moonachie",zip:"07074"},{name:"New Milford",zip:"07646"},{name:"North Arlington",zip:"07031"},{name:"Northvale",zip:"07647"},
-    {name:"Norwood",zip:"07648"},{name:"Oakland",zip:"07436"},{name:"Old Tappan",zip:"07675"},{name:"Oradell",zip:"07649"},
-    {name:"Palisades Park",zip:"07650"},{name:"Paramus",zip:"07652"},{name:"Park Ridge",zip:"07656"},{name:"Ramsey",zip:"07446"},
-    {name:"Ridgefield",zip:"07657"},{name:"Ridgefield Park",zip:"07660"},{name:"Ridgewood",zip:"07450"},{name:"River Edge",zip:"07661"},
-    {name:"River Vale",zip:"07675"},{name:"Rochelle Park",zip:"07662"},{name:"Rockleigh",zip:"07647"},{name:"Rutherford",zip:"07070"},
-    {name:"Saddle Brook",zip:"07663"},{name:"Saddle River",zip:"07458"},{name:"South Hackensack",zip:"07606"},{name:"Teaneck",zip:"07666"},
-    {name:"Tenafly",zip:"07670"},{name:"Teterboro",zip:"07608"},{name:"Upper Saddle River",zip:"07458"},{name:"Waldwick",zip:"07463"},
-    {name:"Wallington",zip:"07057"},{name:"Washington Township",zip:"07676"},{name:"Westwood",zip:"07675"},{name:"Woodcliff Lake",zip:"07677"},
-    {name:"Wood-Ridge",zip:"07075"},{name:"Wyckoff",zip:"07481"}
-].sort((a,b)=>a.name.localeCompare(b.name));
-
-function populateTowns() {
-    const list = document.getElementById('townsList');
-    if (list.innerHTML) return;
-    list.innerHTML = bergenTowns.map(t => 
-        `<li onclick="this.querySelector('.sa-zip-dropdown').classList.toggle('active')">
-            <h3>${t.name}</h3>
-            <div class="sa-zip-dropdown"><h4>ZIP Code: ${t.zip}</h4></div>
-        </li>`
-    ).join('');
-}
+    {name:"Allendale",zip:"07401"},{name:"Alpine",zip:"07620"},{name:"Bergenfield",zip:"07621"},
+    {name:"Bogota",zip:"07603"},{name:"Carlstadt",zip:"07072"},{name:"Cliffside Park",zip:"07010"},
+    {name:"Closter",zip:"07624"},{name:"Cresskill",zip:"07626"},{name:"Demarest",zip:"07627"},
+    {name:"Dumont",zip:"07628"},{name:"East Rutherford",zip:"07073"},{name:"Edgewater",zip:"07020"},
+    {name:"Elmwood Park",zip:"07407"},{name:"Emerson",zip:"07630"},{name:"Englewood",zip:"07631"},
+    {name:"Englewood Cliffs",zip:"07632"},{name:"Fair Lawn",zip:"07410"},{name:"Fairview",zip:"07022"},
+    {name:"Fort Lee",zip:"07024"},{name:"Franklin Lakes",zip:"07417"},{name:"Garfield",zip:"07026"},
+    {name:"Glen Rock",zip:"07452"},{name:"Hackensack",zip:"07601"},{name:"Harrington Park",zip:"07640"},
+    {name:"Hasbrouck Heights",zip:"07604"},{name:"Haworth",zip:"07641"},{name:"Hillsdale",zip:"07642"},
+    {name:"Ho-Ho-Kus",zip:"07423"},{name:"Leonia",zip:"07605"},{name:"Little Ferry",zip:"07643"},
+    {name:"Lodi",zip:"07644"},{name:"Lyndhurst",zip:"07071"},{name:"Mahwah",zip:"07430"},
+    {name:"Maywood",zip:"07607"},{name:"Midland Park",zip:"07432"},{name:"Montvale",zip:"07645"},
+    {name:"Moonachie",zip:"07074"},{name:"New Milford",zip:"07646"},{name:"North Arlington",zip:"07031"},
+    {name:"Northvale",zip:"07647"},{name:"Norwood",zip:"07648"},{name:"Oakland",zip:"07436"},
+    {name:"Old Tappan",zip:"07675"},{name:"Oradell",zip:"07649"},{name:"Palisades Park",zip:"07650"},
+    {name:"Paramus",zip:"07652"},{name:"Park Ridge",zip:"07656"},{name:"Ramsey",zip:"07446"},
+    {name:"Ridgefield",zip:"07657"},{name:"Ridgefield Park",zip:"07660"},{name:"Ridgewood",zip:"07450"},
+    {name:"River Edge",zip:"07661"},{name:"River Vale",zip:"07675"},{name:"Rochelle Park",zip:"07662"},
+    {name:"Rockleigh",zip:"07647"},{name:"Rutherford",zip:"07070"},{name:"Saddle Brook",zip:"07663"},
+    {name:"Saddle River",zip:"07458"},{name:"South Hackensack",zip:"07606"},{name:"Teaneck",zip:"07666"},
+    {name:"Tenafly",zip:"07670"},{name:"Teterboro",zip:"07608"},{name:"Upper Saddle River",zip:"07458"},
+    {name:"Waldwick",zip:"07463"},{name:"Wallington",zip:"07057"},{name:"Washington Township",zip:"07676"},
+    {name:"Westwood",zip:"07675"},{name:"Woodcliff Lake",zip:"07677"},{name:"Wood-Ridge",zip:"07075"},
+    {name:"Wyckoff",zip:"07481"}
+].sort((a,b) => a.name.localeCompare(b.name));
 
 document.addEventListener('DOMContentLoaded', () => {
+    // ==== SERVICE AREAS (new dropdown) ====
+    const toggleBtn = document.getElementById('saToggleBtn');
+    const dropdown = document.getElementById('saDropdownContent');
+    const townsList = document.getElementById('townsList');
+
+    function populateTowns() {
+        if (townsList.innerHTML) return;
+        townsList.innerHTML = bergenTowns.map(town => `
+            <li onclick="this.querySelector('.sa-zip-dropdown').classList.toggle('active')">
+                <h3>${town.name}</h3>
+                <div class="sa-zip-dropdown">ZIP Code: ${town.zip}</div>
+            </li>
+        `).join('');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        const expanded = dropdown.classList.toggle('active');
+        toggleBtn.setAttribute('aria-expanded', expanded);
+        if (expanded) populateTowns();
+    });
+
+    // ==== EXISTING SCRIPTS (menu, form, etc.) ====
     const menu = document.getElementById('servicesMenu');
     const toggle = document.getElementById('servicesToggle');
-    const dropdown = document.getElementById('servicesDropdown');
     const subToggle = document.getElementById('additionalToggle');
     const subMenu = document.getElementById('additionalSubmenu');
 
     toggle.addEventListener('click', e => { e.stopPropagation(); menu.classList.toggle('active'); });
     subToggle.addEventListener('click', e => {
         e.stopPropagation();
-        const willOpen = !subMenu.classList.contains('active');
         subToggle.classList.toggle('active');
         subMenu.classList.toggle('active');
-        if (willOpen) setTimeout(() => dropdown.scrollTop = dropdown.scrollHeight, 100);
     });
     document.addEventListener('click', () => { menu.classList.remove('active'); subToggle.classList.remove('active'); subMenu.classList.remove('active'); });
-    dropdown.addEventListener('click', e => e.stopPropagation());
-
-    document.getElementById('saToggleBtn').addEventListener('click', () => {
-        const content = document.getElementById('saDropdownContent');
-        content.classList.toggle('active');
-        if (content.classList.contains('active')) populateTowns();
-    });
+    document.getElementById('servicesDropdown').addEventListener('click', e => e.stopPropagation());
 
     document.getElementById('cfBookButton').addEventListener('click', () => {
         document.getElementById('cfContactFormSection').classList.toggle('active');
