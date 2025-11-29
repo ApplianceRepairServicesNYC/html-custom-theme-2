@@ -22,7 +22,6 @@
         .nav-wrapper { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; }
         .nav-right { display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
 
-        /* Services Menu */
         .services-menu { position:relative; }
         .services-btn {
             color:white; font-weight:600; cursor:pointer; padding:12px 20px; border-radius:6px; transition:all .3s;
@@ -43,7 +42,6 @@
         }
         .services-dropdown li:hover { background:var(--red); color:white; padding-left:38px; }
 
-        /* Additional Services Submenu */
         .submenu-toggle {
             display:flex; justify-content:space-between; align-items:center; font-weight:700;
             background:rgba(255,255,255,0.15); margin:10px 20px; border-radius:8px; padding:14px 20px !important;
@@ -80,48 +78,54 @@
         footer { background:#111; color:#ccc; padding:60px 0 30px; text-align:center; }
 
         /* Service Areas */
-        #sa-service-areas{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px}
+        #sa-service-areas{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px;position:relative}
         #sa-service-areas h2{font-size:34px;text-align:center;color:inherit;margin-bottom:5px}
         #sa-service-areas p{font-size:16px;text-align:center;margin-bottom:20px}
         .sa-dropdown-container{text-align:center;margin-bottom:20px}
-        .sa-dropdown-button{padding:14px 32px;border:none;background:linear-gradient(45deg,#003087,#0052cc);color:#fff;font-weight:600;font-size:18px;border-radius:10px;cursor:pointer;transition:all .3s;box-shadow:0 4px 15px rgba(0,48,135,.4)}
+        .sa-dropdown-button{padding:14px 32px;border:none;background:linear-gradient(45deg,#003087,#0052cc);color:#fff;font-weight:600;font-size:18px;border-radius:10px;cursor:pointer;transition:all .3s;box-shadow:0 4px 15px rgba(0,48,135,.4);display:inline-flex;align-items:center;gap:10px}
         .sa-dropdown-button:hover{background:linear-gradient(45deg,#002266,#003f99);transform:translateY(-3px)}
-        .sa-dropdown-content{opacity:0;height:0;overflow:hidden;transition:opacity .3s,height .3s}
-        .sa-dropdown-content.active{opacity:1;height:auto;padding-bottom:20px}
+        .sa-dropdown-content{opacity:0;max-height:0;overflow:hidden;transition:all .5s ease;background:transparent}
+        .sa-dropdown-content.active{opacity:1;max-height:2000px;padding:30px 20px}
+        .sa-slide ul{background:rgba(255,255,255,.95);border-radius:12px;padding:25px;box-shadow:0 4px 20px rgba(0,0,0,.1)}
         .sa-responsive-columns{list-style:none;padding:0;margin:0;column-gap:30px;columns:3}
         .sa-responsive-columns li{padding:10px 12px;margin:6px 0;border-radius:8px;background:rgba(240,244,255,.9);transition:all .3s;cursor:pointer}
         .sa-responsive-columns li:hover{background:#d4e4ff;transform:scale(1.02)}
+        .sa-responsive-columns h3{margin:0;font-size:16px;color:#1e3c72;font-weight:600}
         .sa-zip-dropdown{font-size:13px;color:#444;margin-top:6px;padding-left:15px;max-height:0;overflow:hidden;opacity:0;transition:all .4s}
         .sa-zip-dropdown.active{max-height:30px;opacity:1}
 
         /* Contact Form */
         #cf-schedule-container{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);padding:20px;margin:3rem auto 0;max-width:1200px}
-        .cf-schedule-text{font-family:'Montserrat',sans-serif;font-size:1.5rem;color:#2A2A2A;font-weight:600;text-align:center}
-        .cf-book-button,.cf-call-button{display:block;padding:.5rem 1rem;background:linear-gradient(45deg,#003087,#00205B);color:#fff;font-weight:600;border-radius:8px;border:none;cursor:pointer;margin:0 auto 1rem;width:100%;max-width:200px;height:60px;display:flex;align-items:center;justify-content:center}
+        .cf-schedule-text{font-family:'Montserrat',sans-serif;font-size:1.5rem;color:#2A2A2A;font-weight:600;text-align:center;margin-bottom:15px}
+        .cf-book-button,.cf-call-button{display:block;padding:12px 20px;background:linear-gradient(45deg,#003087,#00205B);color:#fff;font-weight:600;border-radius:8px;border:none;cursor:pointer;margin:10px auto;width:100%;max-width:220px;height:60px;display:flex;align-items:center;justify-content:center;transition:all .3s}
         .cf-book-button:hover,.cf-call-button:hover{background:linear-gradient(45deg,#00205B,#001A45);transform:translateY(-3px)}
-        .cf-contact-form-section{max-height:0;overflow:hidden;opacity:0;transition:all .5s;padding:0;background:linear-gradient(135deg,#003087 0%,#00205B 50%,#001A45 100%);border-radius:12px;margin-top:1rem}
-        .cf-contact-form-section.active{max-height:1400px;opacity:1;padding:1rem}
-        .cf-contact-form-section .expect-text{font-size:.9rem;color:#fff;margin-bottom:.75rem;text-align:center}
-        .cf-contact-form{background:rgba(255,255,255,.95);border-radius:12px;padding:1rem;display:flex;flex-direction:column;gap:.75rem}
-        .cf-form-group label{font-size:1rem;font-weight:600;color:#fff;margin-bottom:.25rem}
-        .cf-form-group input,.cf-form-group select,.cf-form-group textarea{padding:.75rem;border:1px solid #D1D3D4;border-radius:8px;background:#fff}
-        .cf-form-button{background:linear-gradient(45deg,#003087,#00205B);color:#fff;font-weight:600;border-radius:8px;border:none;cursor:pointer;width:200px;height:60px;margin:0 auto;display:flex;align-items:center;justify-content:center}
-        .cf-success-modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center; }
-        .cf-success-modal.active { display:flex; }
-        .cf-success-content { background:white; padding:40px 30px; border-radius:12px; text-align:center; max-width:90%; box-shadow:0 10px 30px rgba(0,0,0,0.3); }
-        .cf-success-content p { font-size:20px; font-weight:600; color:#003087; margin:0 0 25px; line-height:1.4; }
-        .cf-close-modal { background:var(--red); color:white; border:none; padding:12px 32px; border-radius:8px; font-size:16px; font-weight:700; cursor:pointer; }
+        .cf-contact-form-section{max-height:0;overflow:hidden;opacity:0;transition:all .6s ease;padding:0;background:linear-gradient(135deg,#003087 0%,#00205B 50%,#001A45 100%);border-radius:12px;margin-top:15px}
+        .cf-contact-form-section.active{max-height:1600px;opacity:1;padding:20px}
+        .expect-text{font-size:.95rem;color:#fff;text-align:center;margin-bottom:15px}
+        .cf-contact-form{background:rgba(255,255,255,.95);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:15px}
+        .cf-form-group{display:flex;flex-direction:column}
+        .cf-form-group label{font-size:1rem;font-weight:600;color:#fff;margin-bottom:5px}
+        .cf-form-group input,.cf-form-group select,.cf-form-group textarea{padding:12px;font-size:16px;border:1px solid #ccc;border-radius:8px;background:#fff}
+        .cf-form-group textarea{resize:vertical;min-height:100px}
+        .cf-form-button{background:linear-gradient(45deg,#003087,#00205B);color:#fff;font-weight:600;border:none;border-radius:8px;cursor:pointer;width:220px;height:60px;margin:20px auto 0;display:flex;align-items:center;justify-content:center;transition:all .3s}
+        .cf-form-button:hover{background:linear-gradient(45deg,#00205B,#001A45);transform:translateY(-3px)}
+
+        .cf-success-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:2000;align-items:center;justify-content:center}
+        .cf-success-modal.active{display:flex}
+        .cf-success-content{background:white;padding:40px 30px;border-radius:12px;text-align:center;max-width:90%;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+        .cf-success-content p{font-size:20px;font-weight:600;color:#003087;margin:0 0 25px;line-height:1.4}
+        .cf-close-modal{background:var(--red);color:white;border:none;padding:12px 32px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer}
 
         @media(max-width:768px){
-            .nav-wrapper { flex-direction:column; padding:15px 0; }
-            .logo { margin-bottom:10px; }
-            .nav-right { width:100%; justify-content:center; gap:15px; }
-            .services-dropdown { top:100px; }
+            .nav-wrapper{flex-direction:column;padding:15px 0}
+            .logo{margin-bottom:10px}
+            .nav-right{width:100%;justify-content:center;gap:15px}
+            .services-dropdown{top:100px}
             .sa-responsive-columns{columns:2}
         }
         @media(max-width:480px){
             .sa-responsive-columns{columns:1}
-            .nav-call-btn { padding:12px 20px; font-size:16px; }
+            .nav-call-btn{padding:12px 20px;font-size:16px}
         }
     </style>
 </head>
@@ -163,7 +167,6 @@
                     </div>
                 </ul>
             </div>
-
             <a href="tel:+12012983499" class="nav-call-btn">Call Now</a>
         </div>
     </div>
@@ -200,14 +203,12 @@
             <h2>Service Areas – All of Bergen County, NJ</h2>
             <p>We proudly serve <strong>every single town and municipality</strong> in Bergen County with fast, reliable, same-day GE appliance repair.</p>
             <div class="sa-dropdown-container">
-                <button class="sa-dropdown-button" onclick="document.getElementById('saDropdownContent').classList.toggle('active'); if(!document.querySelector('.sa-responsive-columns').innerHTML) saPopulate();">
-                    View All Bergen County Service Areas
-                </button>
+                <button class="sa-dropdown-button" id="saToggleBtn">View All Bergen County Service Areas</button>
                 <div class="sa-dropdown-content" id="saDropdownContent">
-                    <section class="sa-slide">
+                    <div class="sa-slide">
                         <h2>All Bergen County NJ Towns We Service</h2>
-                        <ul class="sa-responsive-columns"></ul>
-                    </section>
+                        <ul class="sa-responsive-columns" id="townsList"></ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -215,7 +216,7 @@
         <section id="cf-schedule-container">
             <div class="cf-schedule-text">Schedule Your GE Repair Online</div>
             <button class="cf-book-button" id="cfBookButton">Book Online</button>
-            <button id="cfCallButton" class="cf-call-button">Call Now</button>
+            <button class="cf-call-button" id="cfCallButton">Call Now</button>
             <span id="cfCallSlot"></span>
 
             <div class="cf-contact-form-section" id="cfContactFormSection">
@@ -279,12 +280,36 @@
 </footer>
 
 <script>
-const bergenTowns = [{name:"Allendale",zip:"07401"},{name:"Alpine",zip:"07620"},{name:"Bergenfield",zip:"07621"},{name:"Bogota",zip:"07603"},{name:"Carlstadt",zip:"07072"},{name:"Cliffside Park",zip:"07010"},{name:"Closter",zip:"07624"},{name:"Cresskill",zip:"07626"},{name:"Demarest",zip:"07627"},{name:"Dumont",zip:"07628"},{name:"East Rutherford",zip:"07073"},{name:"Edgewater",zip:"07020"},{name:"Elmwood Park",zip:"07407"},{name:"Emerson",zip:"07630"},{name:"Englewood",zip:"07631"},{name:"Englewood Cliffs",zip:"07632"},{name:"Fair Lawn",zip:"07410"},{name:"Fairview",zip:"07022"},{name:"Fort Lee",zip:"07024"},{name:"Franklin Lakes",zip:"07417"},{name:"Garfield",zip:"07026"},{name:"Glen Rock",zip:"07452"},{name:"Hackensack",zip:"07601"},{name:"Harrington Park",zip:"07640"},{name:"Hasbrouck Heights",zip:"07604"},{name:"Haworth",zip:"07641"},{name:"Hillsdale",zip:"07642"},{name:"Ho-Ho-Kus",zip:"07423"},{name:"Leonia",zip:"07605"},{name:"Little Ferry",zip:"07643"},{name:"Lodi",zip:"07644"},{name:"Lyndhurst",zip:"07071"},{name:"Mahwah",zip:"07430"},{name:"Maywood",zip:"07607"},{name:"Midland Park",zip:"07432"},{name:"Montvale",zip:"07645"},{name:"Moonachie",zip:"07074"},{name:"New Milford",zip:"07646"},{name:"North Arlington",zip:"07031"},{name:"Northvale",zip:"07647"},{name:"Norwood",zip:"07648"},{name:"Oakland",zip:"07436"},{name:"Old Tappan",zip:"07675"},{name:"Oradell",zip:"07649"},{name:"Palisades Park",zip:"07650"},{name:"Paramus",zip:"07652"},{name:"Park Ridge",zip:"07656"},{name:"Ramsey",zip:"07446"},{name:"Ridgefield",zip:"07657"},{name:"Ridgefield Park",zip:"07660"},{name:"Ridgewood",zip:"07450"},{name:"River Edge",zip:"07661"},{name:"River Vale",zip:"07675"},{name:"Rochelle Park",zip:"07662"},{name:"Rockleigh",zip:"07647"},{name:"Rutherford",zip:"07070"},{name:"Saddle Brook",zip:"07663"},{name:"Saddle River",zip:"07458"},{name:"South Hackensack",zip:"07606"},{name:"Teaneck",zip:"07666"},{name:"Tenafly",zip:"07670"},{name:"Teterboro",zip:"07608"},{name:"Upper Saddle River",zip:"07458"},{name:"Waldwick",zip:"07463"},{name:"Wallington",zip:"07057"},{name:"Washington Township",zip:"07676"},{name:"Westwood",zip:"07675"},{name:"Woodcliff Lake",zip:"07677"},{name:"Wood-Ridge",zip:"07075"},{name:"Wyckoff",zip:"07481"}].sort((a,b)=>a.name.localeCompare(b.name));
+const bergenTowns = [
+    {name:"Allendale",zip:"07401"},{name:"Alpine",zip:"07620"},{name:"Bergenfield",zip:"07621"},{name:"Bogota",zip:"07603"},
+    {name:"Carlstadt",zip:"07072"},{name:"Cliffside Park",zip:"07010"},{name:"Closter",zip:"07624"},{name:"Cresskill",zip:"07626"},
+    {name:"Demarest",zip:"07627"},{name:"Dumont",zip:"07628"},{name:"East Rutherford",zip:"07073"},{name:"Edgewater",zip:"07020"},
+    {name:"Elmwood Park",zip:"07407"},{name:"Emerson",zip:"07630"},{name:"Englewood",zip:"07631"},{name:"Englewood Cliffs",zip:"07632"},
+    {name:"Fair Lawn",zip:"07410"},{name:"Fairview",zip:"07022"},{name:"Fort Lee",zip:"07024"},{name:"Franklin Lakes",zip:"07417"},
+    {name:"Garfield",zip:"07026"},{name:"Glen Rock",zip:"07452"},{name:"Hackensack",zip:"07601"},{name:"Harrington Park",zip:"07640"},
+    {name:"Hasbrouck Heights",zip:"07604"},{name:"Haworth",zip:"07641"},{name:"Hillsdale",zip:"07642"},{name:"Ho-Ho-Kus",zip:"07423"},
+    {name:"Leonia",zip:"07605"},{name:"Little Ferry",zip:"07643"},{name:"Lodi",zip:"07644"},{name:"Lyndhurst",zip:"07071"},
+    {name:"Mahwah",zip:"07430"},{name:"Maywood",zip:"07607"},{name:"Midland Park",zip:"07432"},{name:"Montvale",zip:"07645"},
+    {name:"Moonachie",zip:"07074"},{name:"New Milford",zip:"07646"},{name:"North Arlington",zip:"07031"},{name:"Northvale",zip:"07647"},
+    {name:"Norwood",zip:"07648"},{name:"Oakland",zip:"07436"},{name:"Old Tappan",zip:"07675"},{name:"Oradell",zip:"07649"},
+    {name:"Palisades Park",zip:"07650"},{name:"Paramus",zip:"07652"},{name:"Park Ridge",zip:"07656"},{name:"Ramsey",zip:"07446"},
+    {name:"Ridgefield",zip:"07657"},{name:"Ridgefield Park",zip:"07660"},{name:"Ridgewood",zip:"07450"},{name:"River Edge",zip:"07661"},
+    {name:"River Vale",zip:"07675"},{name:"Rochelle Park",zip:"07662"},{name:"Rockleigh",zip:"07647"},{name:"Rutherford",zip:"07070"},
+    {name:"Saddle Brook",zip:"07663"},{name:"Saddle River",zip:"07458"},{name:"South Hackensack",zip:"07606"},{name:"Teaneck",zip:"07666"},
+    {name:"Tenafly",zip:"07670"},{name:"Teterboro",zip:"07608"},{name:"Upper Saddle River",zip:"07458"},{name:"Waldwick",zip:"07463"},
+    {name:"Wallington",zip:"07057"},{name:"Washington Township",zip:"07676"},{name:"Westwood",zip:"07675"},{name:"Woodcliff Lake",zip:"07677"},
+    {name:"Wood-Ridge",zip:"07075"},{name:"Wyckoff",zip:"07481"}
+].sort((a,b)=>a.name.localeCompare(b.name));
 
-function saPopulate(){
-    const ul = document.querySelector('.sa-responsive-columns');
-    if(ul.innerHTML) return;
-    ul.innerHTML = bergenTowns.map(t=>`<li onclick="this.querySelector('.sa-zip-dropdown').classList.toggle('active')"><h3>${t.name}</h3><div class="sa-zip-dropdown"><h4>ZIP Code: ${t.zip}</h4></div></li>`).join('');
+function populateTowns() {
+    const list = document.getElementById('townsList');
+    if (list.innerHTML) return;
+    list.innerHTML = bergenTowns.map(t => 
+        `<li onclick="this.querySelector('.sa-zip-dropdown').classList.toggle('active')">
+            <h3>${t.name}</h3>
+            <div class="sa-zip-dropdown"><h4>ZIP Code: ${t.zip}</h4></div>
+        </li>`
+    ).join('');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -294,31 +319,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const subToggle = document.getElementById('additionalToggle');
     const subMenu = document.getElementById('additionalSubmenu');
 
-    toggle.addEventListener('click', e => {
-        e.stopPropagation();
-        menu.classList.toggle('active');
-    });
-
+    toggle.addEventListener('click', e => { e.stopPropagation(); menu.classList.toggle('active'); });
     subToggle.addEventListener('click', e => {
         e.stopPropagation();
         const willOpen = !subMenu.classList.contains('active');
         subToggle.classList.toggle('active');
         subMenu.classList.toggle('active');
-
-        if (willOpen) {
-            setTimeout(() => {
-                dropdown.scrollTop = dropdown.scrollHeight;
-            }, 100);
-        }
+        if (willOpen) setTimeout(() => dropdown.scrollTop = dropdown.scrollHeight, 100);
     });
-
-    document.addEventListener('click', () => {
-        menu.classList.remove('active');
-        subToggle.classList.remove('active');
-        subMenu.classList.remove('active');
-    });
-
+    document.addEventListener('click', () => { menu.classList.remove('active'); subToggle.classList.remove('active'); subMenu.classList.remove('active'); });
     dropdown.addEventListener('click', e => e.stopPropagation());
+
+    // Service Areas
+    document.getElementById('saToggleBtn').addEventListener('click', () => {
+        const content = document.getElementById('saDropdownContent');
+        content.classList.toggle('active');
+        if (content.classList.contains('active')) populateTowns();
+    });
 
     // Contact Form
     document.getElementById('cfBookButton').addEventListener('click', () => {
@@ -327,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('cfContactForm').addEventListener('submit', e => {
         e.preventDefault();
-        emailjs.sendForm('service_emxksio','template_tmexlql',e.target)
+        emailjs.sendForm('service_emxksio','template_tmexlql', e.target)
             .then(() => {
                 e.target.reset();
                 document.getElementById('cfContactFormSection').classList.remove('active');
@@ -342,6 +359,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('cfModalOverlay').classList.remove('active');
     };
     document.getElementById('cfModalOverlay').onclick = () => document.getElementById('cfCloseModal').click();
+
+    // Call Now Button
+    document.getElementById('cfCallButton').addEventListener('click', () => {
+        const phone = '+12012983499';
+        window.location.href = 'tel:' + phone;
+    });
 });
 </script>
 </body>
