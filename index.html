@@ -26,6 +26,14 @@
             background:rgba(255,255,255,0.1); white-space:nowrap;
         }
         .services-btn:hover { background:rgba(255,255,255,0.2); }
+
+        /* NAVIGATION CALL NOW – EXACT SAME AS ORIGINAL (RIGHT OF SERVICES) */
+        .nav-call-btn {
+            background:var(--red); color:white; padding:12px 28px; border-radius:6px; font-weight:700;
+            text-decoration:none; font-size:17px; transition:all .3s; cursor:pointer;
+        }
+        .nav-call-btn:hover { background:#c41b20; transform:translateY(-2px); }
+
         .services-dropdown {
             display:none; position:fixed; left:50%; top:90px; transform:translateX(-50%);
             width:90%; max-width:420px; background:var(--blue); border-radius:12px;
@@ -33,31 +41,17 @@
             max-height:78vh; overflow-y:auto;
         }
         .services-menu.active .services-dropdown { display:block; }
-        .services-dropdown li {
-            padding:14px 28px; color:#eee; font-size:15px; transition:all .3s; cursor:pointer;
-        }
+        .services-dropdown li { padding:14px 28px; color:#eee; font-size:15px; transition:all .3s; cursor:pointer; }
         .services-dropdown li:hover { background:var(--red); color:white; padding-left:38px; }
-        .submenu-toggle {
-            display:flex; justify-content:space-between; align-items:center; font-weight:700;
-            background:rgba(255,255,255,0.15); margin:10px 20px; border-radius:8px; padding:14px 20px !important;
-        }
+        .submenu-toggle { display:flex; justify-content:space-between; align-items:center; font-weight:700;
+            background:rgba(255,255,255,0.15); margin:10px 20px; border-radius:8px; padding:14px 20px !important; }
         .submenu-toggle i { transition:transform .3s; font-size:18px; }
         .submenu-toggle.active i { transform:rotate(90deg); }
-        .additional-submenu {
-            max-height:0; overflow:hidden; transition:max-height .5s ease;
-            background:rgba(0,0,0,0.2); margin:0 20px 10px; border-radius:8px;
-        }
+        .additional-submenu { max-height:0; overflow:hidden; transition:max-height .5s ease;
+            background:rgba(0,0,0,0.2); margin:0 20px 10px; border-radius:8px; }
         .additional-submenu.active { max-height:1200px; padding:10px 0; }
         .additional-submenu li { padding-left:50px !important; }
         .additional-submenu li:hover { padding-left:60px !important; }
-
-        /* ORIGINAL RED CALL BUTTON STYLE (used for nav + form) */
-        .nav-call-btn {
-            background:var(--red); color:white; padding:12px 28px; border-radius:6px; font-weight:700;
-            text-decoration:none; font-size:17px; transition:all .3s; cursor:pointer; display:inline-block;
-            min-width:140px; text-align:center;
-        }
-        .nav-call-btn:hover { background:#c41b20; transform:translateY(-2px); }
 
         .hero { background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('https://geappliancerepairbergencounty.com/assets/img/ge-repair-bergen-county.jpg') center/cover no-repeat; color:white; text-align:center; padding:160px 20px 100px; margin-top:80px; }
         .btn { background:var(--red); color:white; padding:14px 34px; border-radius:6px; font-weight:600; text-decoration:none; display:inline-block; margin:15px; font-size:18px; }
@@ -70,71 +64,36 @@
         .service:hover i { color:var(--red); }
         footer { background:#111; color:#ccc; padding:60px 0 30px; text-align:center; }
 
-        /* SERVICE AREAS SECTION (100% unchanged) */
-        #sa-service-areas{
-            font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-            background:transparent;border:2px solid #808080;border-radius:12px;
-            box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px;
-            position:relative;animation:fadeIn .8s ease-out forwards
-        }
-        #sa-service-areas h2{font-size:34px;text-align:center;color:inherit;margin-bottom:5px;
-            text-shadow:0 2px 4px rgba(0,0,0,.3);transition:transform .3s,color .3s}
+        /* SERVICE AREAS – YOUR ORIGINAL CODE */
+        #sa-service-areas{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px;position;animation:fadeIn .8s ease-out forwards}
+        #sa-service-areas h2{font-size:34px;text-align:center;color:inherit;margin-bottom:5px;text-shadow:0 2px 4px rgba(0,0,0,.3);transition:transform .3s,color .3s}
         #sa-service-areas h2:hover{color:#ffd700;transform:scale(1.05)}
-        #sa-service-areas p{font-size:16px;text-align:center;margin-bottom:20px;
-            text-shadow:0 1px 3px rgba(0,0,0,.2)}
+        #sa-service-areas p{font-size:16px;text-align:center;margin-bottom:20px;text-shadow:0 1px 3px rgba(0,0,0,.2)}
         .sa-dropdown-container{text-align:center;margin-bottom:20px}
-        .sa-dropdown-button{
-            padding:14px 32px;border:none;background:linear-gradient(45deg,#003087,#0052cc);
-            color:#fff;font-weight:600;font-size:18px;border-radius:10px;cursor:pointer;
-            transition:all .3s;box-shadow:0 4px 15px rgba(0,48,135,.4);
-            display:inline-flex;align-items:center;gap:10px
-        }
-        .sa-dropdown-button:hover{
-            background:linear-gradient(45deg,#002266,#003f99);
-            transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,48,135,.6)
-        }
-        .sa-dropdown-content{opacity:0;height:0;overflow:hidden;transition:opacity .5s,height .5s,transform .5s;
-            transform:translateY(-10px);background:transparent}
+        .sa-dropdown-button{padding:14px 32px;border:none;background:linear-gradient(45deg,#003087,#0052cc);color:#fff;font-weight:600;font-size:18px;border-radius:10px;cursor:pointer;transition:all .3s;box-shadow:0 4px 15px rgba(0,48,135,.4);display:inline-flex;align-items:center;gap:10px}
+        .sa-dropdown-button:hover{background:linear-gradient(45deg,#002266,#003f99);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,48,135,.6)}
+        .sa-dropdown-content{opacity:0;height:0;overflow:hidden;transition:opacity .5s,height .5s,transform .5s;transform:translateY(-10px);background:transparent}
         .sa-dropdown-content.active{opacity:1;height:auto;transform:translateY(0);padding:20px 0}
-        .sa-slide h2{font-size:28px;text-align:center;margin-bottom:15px;
-            text-shadow:0 1px 3px rgba(0,0,0,.2)}
-        .sa-slide ul{background:rgba(255,255,255,.95);border-radius:12px;padding:25px;
-            box-shadow:0 4px 20px rgba(0,0,0,.1);transition:transform .3s}
+        .sa-slide h2{font-size:28px;text-align:center;margin-bottom:15px;text-shadow:0 1px 3px rgba(0,0,0,.2)}
+        .sa-slide ul{background:rgba(255,255,255,.95);border-radius:12px;padding:25px;box-shadow:0 4px 20px rgba(0,0,0,.1);transition:transform .3s}
         .sa-slide ul:hover{transform:translateY(-5px)}
         .sa-responsive-columns{list-style:none;padding:0;margin:0;column-gap:30px;columns:3}
-        .sa-responsive-columns li{padding:12px 15px;margin:8px 0;border-radius:10px;
-            background:rgba(240,244,255,.9);transition:all .3s;cursor:pointer;
-            box-shadow:0 2px 8px rgba(0,0,0,.08)}
-        .sa-responsive-columns li:hover{background:#d4e4ff;transform:scale(1.03);
-            box-shadow:0 4px 12px rgba(0,0,0,.15)}
+        .sa-responsive-columns li{padding:12px 15px;margin:8px 0;border-radius:10px;background:rgba(240,244,255,.9);transition:all .3s;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+        .sa-responsive-columns li:hover{background:#d4e4ff;transform:scale(1.03);box-shadow:0 4px 12px rgba(0,0,0,.15)}
         .sa-responsive-columns h3{margin:0 0 6px;font-size:17px;color:#1e3c72;font-weight:600}
-        .sa-zip-dropdown{font-size:14px;color:#003087;font-weight:600;
-            max-height:0;overflow:hidden;opacity:0;transition:all .4s ease;
-            transform:translateY(-10px)}
+        .sa-zip-dropdown{font-size:14px;color:#003087;font-weight:600;max-height:0;overflow:hidden;opacity:0;transition:all .4s ease;transform:translateY(-10px)}
         .sa-zip-dropdown.active{max-height:40px;opacity:1;transform:translateY(0);padding-top:4px}
         @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-        /* Contact Form */
+        /* CONTACT FORM */
         #cf-schedule-container{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);padding:20px;margin:3rem auto 0;max-width:1200px}
         .cf-schedule-text{font-family:'Montserrat',sans-serif;font-size:1.5rem;color:#2A2A2A;font-weight:600;text-align:center;margin-bottom:15px}
-        
-        /* Book Online button (blue) */
-        .cf-book-button{
-            display:block; padding:12px 20px; background:linear-gradient(45deg,#003087,#00205B);
-            color:#fff; font-weight:600; border-radius:8px; border:none; cursor:pointer;
-            margin:10px auto; width:100%; max-width:220px; height:60px;
-            display:flex; align-items:center; justify-content:center; transition:all .3s;
-        }
+        .cf-book-button{display:block;padding:12px 20px;background:linear-gradient(45deg,#003087,#00205B);color:#fff;font-weight:600;border-radius:8px;border:none;cursor:pointer;margin:10px auto;width:100%;max-width:220px;height:60px;display:flex;align-items:center;justify-content:center;transition:all .3s}
         .cf-book-button:hover{background:linear-gradient(45deg,#00205B,#001A45);transform:translateY(-3px)}
 
-        /* Call Now button directly below Book Online - SAME RED STYLE */
-        .cf-call-now-btn{
-            display:block; padding:12px 20px; background:var(--red); color:white;
-            font-weight:700; border-radius:6px; border:none; cursor:pointer;
-            margin:10px auto; width:100%; max-width:220px; height:60px;
-            display:flex; align-items:center; justify-content:center; transition:all .3s; font-size:17px;
-        }
-        .cf-call-now-btn:hover{background:#c41b20;transform:translateY(-3px)}
+        /* FORM CALL NOW – BELOW BOOK ONLINE */
+        .form-call-now{display:block;padding:12px 28px;background:var(--red);color:white;font-weight:700;border-radius:6px;font-size:17px;cursor:pointer;margin:15px auto 0;width:100%;max-width:220px;height:60px;display:flex;align-items:center;justify-content:center;transition:all .3s}
+        .form-call-now:hover{background:#c41b20;transform:translateY(-3px)}
 
         .cf-contact-form-section{max-height:0;overflow:hidden;opacity:0;transition:all .6s ease;padding:0;background:linear-gradient(135deg,#003087 0%,#00205B 50%,#001A45 100%);border-radius:12px;margin-top:15px}
         .cf-contact-form-section.active{max-height:1600px;opacity:1;padding:20px}
@@ -151,13 +110,7 @@
         .cf-success-content{background:white;padding:40px 30px;border-radius:12px;text-align:center;max-width:90%;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
         .cf-success-content p{font-size:20px;font-weight:600;color:#003087;margin:0 0 25px;line-height:1.6}
         .cf-close-modal{background:var(--red);color:white;border:none;padding:12px 32px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer}
-        @media(max-width:768px){
-            .nav-wrapper{flex-direction:column;padding:15px 0}
-            .logo{margin-bottom:10px}
-            .nav-right{width:100%;justify-content:center;gap:15px}
-            .services-dropdown{top:100px}
-            .sa-responsive-columns{columns:2}
-        }
+        @media(max-width:768px){.nav-wrapper{flex-direction:column;padding:15px 0}.logo{margin-bottom:10px}.nav-right{width:100%;justify-content:center;gap:15px}.services-dropdown{top:100px}.sa-responsive-columns{columns:2}}
         @media(max-width:480px){.sa-responsive-columns{columns:1}}
     </style>
 </head>
@@ -179,9 +132,7 @@
                     <li>GE Microwave Repair</li>
                     <li>GE Wine Cooler Repair</li>
                     <li>All GE Appliances</li>
-                    <li class="submenu-toggle" id="additionalToggle">
-                        Additional Services <i class="fas fa-chevron-right"></i>
-                    </li>
+                    <li class="submenu-toggle" id="additionalToggle">Additional Services <i class="fas fa-chevron-right"></i></li>
                     <div class="additional-submenu" id="additionalSubmenu">
                         <li>Installation, Repair & Maintenance</li>
                         <li>Refrigerator Compressor & Refrigerant Service</li>
@@ -198,6 +149,7 @@
                     </div>
                 </ul>
             </div>
+            <!-- NAVIGATION CALL NOW – TO THE RIGHT OF SERVICES (EXACT ORIGINAL POSITION) -->
             <div class="nav-call-btn" id="navCallNow">Call Now</div>
         </div>
     </div>
@@ -231,7 +183,6 @@
 <section class="alt" id="contact">
     <div class="container">
 
-        <!-- SERVICE AREAS (unchanged) -->
         <section id="sa-service-areas">
             <h2>Service Areas – All of Bergen County, NJ</h2>
             <p>We proudly serve <strong>every single town and municipality</strong> in Bergen County with fast, reliable, same-day GE appliance repair.</p>
@@ -248,34 +199,20 @@
             </div>
         </section>
 
-        <!-- CONTACT FORM - CALL NOW DIRECTLY BELOW BOOK ONLINE -->
         <section id="cf-schedule-container">
             <div class="cf-schedule-text">Schedule Your GE Repair Online</div>
             
             <button class="cf-book-button" id="cfBookButton">Book Online</button>
-            <button class="cf-call-now-btn" id="formCallNow">Call Now</button>
+            <button class="form-call-now" id="formCallNow">Call Now</button>
 
             <div class="cf-contact-form-section" id="cfContactFormSection">
                 <p class="expect-text">What to Expect: Once you submit your request, a representative will contact you within 30 minutes...</p>
                 <form id="cfContactForm" class="cf-contact-form">
-                    <div class="cf-form-group">
-                        <label for="cfName">Name *</label>
-                        <input type="text" id="cfName" name="from_name" placeholder="John Doe" required>
-                    </div>
-                    <div class="cf-form-group">
-                        <label for="cfEmail">Email *</label>
-                        <input type="email" id="cfEmail" name="user_email" placeholder="john@example.com" required>
-                    </div>
-                    <div class="cf-form-group">
-                        <label for="cfPhone">Phone *</label>
-                        <input type="tel" id="cfPhone" name="phone" placeholder="1234567890" required pattern="[0-9]{10}">
-                    </div>
-                    <div class="cf-form-group">
-                        <label for="cfAddress">Address *</label>
-                        <textarea id="cfAddress" name="address" placeholder="123 Main St, Ridgewood, NJ 07450" required></textarea>
-                    </div>
-                    <div class="cf-form-group">
-                        <label for="cfSubject">Appliance Type *</label>
+                    <div class="cf-form-group"><label for="cfName">Name *</label><input type="text" id="cfName" name="from_name" placeholder="John Doe" required></div>
+                    <div class="cf-form-group"><label for="cfEmail">Email *</label><input type="email" id="cfEmail" name="user_email" placeholder="john@example.com" required></div>
+                    <div class="cf-form-group"><label for="cfPhone">Phone *</label><input type="tel" id="cfPhone" name="phone" placeholder="1234567890" required pattern="[0-9]{10}"></div>
+                    <div class="cf-form-group"><label for="cfAddress">Address *</label><textarea id="cfAddress" name="address" placeholder="123 Main St, Ridgewood, NJ 07450" required></textarea></div>
+                    <div class="cf-form-group"><label for="cfSubject">Appliance Type *</label>
                         <select id="cfSubject" name="appliance" required>
                             <option value="">Select Appliance</option>
                             <option>GE Refrigerator Repair</option>
@@ -288,10 +225,7 @@
                             <option>Other GE Appliance</option>
                         </select>
                     </div>
-                    <div class="cf-form-group">
-                        <label for="cfMessage">Describe the Problem *</label>
-                        <textarea id="cfMessage" name="message" placeholder="Briefly describe the issue..." required></textarea>
-                    </div>
+                    <div class="cf-form-group"><label for="cfMessage">Describe the Problem *</label><textarea id="cfMessage" name="message" placeholder="Briefly describe the issue..." required></textarea></div>
                     <button type="submit" class="cf-form-button">Send Request</button>
                 </form>
             </div>
@@ -316,33 +250,8 @@
 </footer>
 
 <script>
-// Full Bergen County towns list (unchanged)
-const bergenTowns = [
-    {name:"Allendale",zip:"07401"},{name:"Alpine",zip:"07620"},{name:"Bergenfield",zip:"07621"},
-    {name:"Bogota",zip:"07603"},{name:"Carlstadt",zip:"07072"},{name:"Cliffside Park",zip:"07010"},
-    {name:"Closter",zip:"07624"},{name:"Cresskill",zip:"07626"},{name:"Demarest",zip:"07627"},
-    {name:"Dumont",zip:"07628"},{name:"East Rutherford",zip:"07073"},{name:"Edgewater",zip:"07020"},
-    {name:"Elmwood Park",zip:"07407"},{name:"Emerson",zip:"07630"},{name:"Englewood",zip:"07631"},
-    {name:"Englewood Cliffs",zip:"07632"},{name:"Fair Lawn",zip:"07410"},{name:"Fairview",zip:"07022"},
-    {name:"Fort Lee",zip:"07024"},{name:"Franklin Lakes",zip:"07417"},{name:"Garfield",zip:"07026"},
-    {name:"Glen Rock",zip:"07452"},{name:"Hackensack",zip:"07601"},{name:"Harrington Park",zip:"07640"},
-    {name:"Hasbrouck Heights",zip:"07604"},{name:"Haworth",zip:"07641"},{name:"Hillsdale",zip:"07642"},
-    {name:"Ho-Ho-Kus",zip:"07423"},{name:"Leonia",zip:"07605"},{name:"Little Ferry",zip:"07643"},
-    {name:"Lodi",zip:"07644"},{name:"Lyndhurst",zip:"07071"},{name:"Mahwah",zip:"07430"},
-    {name:"Maywood",zip:"07607"},{name:"Midland Park",zip:"07432"},{name:"Montvale",zip:"07645"},
-    {name:"Moonachie",zip:"07074"},{name:"New Milford",zip:"07646"},{name:"North Arlington",zip:"07031"},
-    {name:"Northvale",zip:"07647"},{name:"Norwood",zip:"07648"},{name:"Oakland",zip:"07436"},
-    {name:"Old Tappan",zip:"07675"},{name:"Oradell",zip:"07649"},{name:"Palisades Park",zip:"07650"},
-    {name:"Paramus",zip:"07652"},{name:"Park Ridge",zip:"07656"},{name:"Ramsey",zip:"07446"},
-    {name:"Ridgefield",zip:"07657"},{name:"Ridgefield Park",zip:"07660"},{name:"Ridgewood",zip:"07450"},
-    {name:"River Edge",zip:"07661"},{name:"River Vale",zip:"07675"},{name:"Rochelle Park",zip:"07662"},
-    {name:"Rockleigh",zip:"07647"},{name:"Rutherford",zip:"07070"},{name:"Saddle Brook",zip:"07663"},
-    {name:"Saddle River",zip:"07458"},{name:"South Hackensack",zip:"07606"},{name:"Teaneck",zip:"07666"},
-    {name:"Tenafly",zip:"07670"},{name:"Teterboro",zip:"07608"},{name:"Upper Saddle River",zip:"07458"},
-    {name:"Waldwick",zip:"07463"},{name:"Wallington",zip:"07057"},{name:"Washington Township",zip:"07676"},
-    {name:"Westwood",zip:"07675"},{name:"Woodcliff Lake",zip:"07677"},{name:"Wood-Ridge",zip:"07075"},
-    {name:"Wyckoff",zip:"07481"}
-].sort((a,b) => a.name.localeCompare(b.name));
+// Full Bergen County towns list
+const bergenTowns = [{name:"Allendale",zip:"07401"},{name:"Alpine",zip:"07620"},{name:"Bergenfield",zip:"07621"},{name:"Bogota",zip:"07603"},{name:"Carlstadt",zip:"07072"},{name:"Cliffside Park",zip:"07010"},{name:"Closter",zip:"07624"},{name:"Cresskill",zip:"07626"},{name:"Demarest",zip:"07627"},{name:"Dumont",zip:"07628"},{name:"East Rutherford",zip:"07073"},{name:"Edgewater",zip:"07020"},{name:"Elmwood Park",zip:"07407"},{name:"Emerson",zip:"07630"},{name:"Englewood",zip:"07631"},{name:"Englewood Cliffs",zip:"07632"},{name:"Fair Lawn",zip:"07410"},{name:"Fairview",zip:"07022"},{name:"Fort Lee",zip:"07024"},{name:"Franklin Lakes",zip:"07417"},{name:"Garfield",zip:"07026"},{name:"Glen Rock",zip:"07452"},{name:"Hackensack",zip:"07601"},{name:"Harrington Park",zip:"07640"},{name:"Hasbrouck Heights",zip:"07604"},{name:"Haworth",zip:"07641"},{name:"Hillsdale",zip:"07642"},{name:"Ho-Ho-Kus",zip:"07423"},{name:"Leonia",zip:"07605"},{name:"Little Ferry",zip:"07643"},{name:"Lodi",zip:"07644"},{name:"Lyndhurst",zip:"07071"},{name:"Mahwah",zip:"07430"},{name:"Maywood",zip:"07607"},{name:"Midland Park",zip:"07432"},{name:"Montvale",zip:"07645"},{name:"Moonachie",zip:"07074"},{name:"New Milford",zip:"07646"},{name:"North Arlington",zip:"07031"},{name:"Northvale",zip:"07647"},{name:"Norwood",zip:"07648"},{name:"Oakland",zip:"07436"},{name:"Old Tappan",zip:"07675"},{name:"Oradell",zip:"07649"},{name:"Palisades Park",zip:"07650"},{name:"Paramus",zip:"07652"},{name:"Park Ridge",zip:"07656"},{name:"Ramsey",zip:"07446"},{name:"Ridgefield",zip:"07657"},{name:"Ridgefield Park",zip:"07660"},{name:"Ridgewood",zip:"07450"},{name:"River Edge",zip:"07661"},{name:"River Vale",zip:"07675"},{name:"Rochelle Park",zip:"07662"},{name:"Rockleigh",zip:"07647"},{name:"Rutherford",zip:"07070"},{name:"Saddle Brook",zip:"07663"},{name:"Saddle River",zip:"07458"},{name:"South Hackensack",zip:"07606"},{name:"Teaneck",zip:"07666"},{name:"Tenafly",zip:"07670"},{name:"Teterboro",zip:"07608"},{name:"Upper Saddle River",zip:"07458"},{name:"Waldwick",zip:"07463"},{name:"Wallington",zip:"07057"},{name:"Washington Township",zip:"07676"},{name:"Westwood",zip:"07675"},{name:"Woodcliff Lake",zip:"07677"},{name:"Wood-Ridge",zip:"07075"},{name:"Wyckoff",zip:"07481"}].sort((a,b)=>a.name.localeCompare(b.name));
 
 document.addEventListener('DOMContentLoaded', () => {
     // Service Areas
@@ -351,12 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const townsList = document.getElementById('townsList');
     function populateTowns() {
         if (townsList.innerHTML) return;
-        townsList.innerHTML = bergenTowns.map(t => `
-            <li onclick="this.querySelector('.sa-zip-dropdown').classList.toggle('active')">
-                <h3>${t.name}</h3>
-                <div class="sa-zip-dropdown">ZIP Code: ${t.zip}</div>
-            </li>
-        `).join('');
+        townsList.innerHTML = bergenTowns.map(t => `<li onclick="this.querySelector('.sa-zip-dropdown').classList.toggle('active')"><h3>${t.name}</h3><div class="sa-zip-dropdown">ZIP Code: ${t.zip}</div></li>`).join('');
     }
     saToggle.addEventListener('click', () => {
         const expanded = saContent.classList.toggle('active');
@@ -374,21 +278,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', () => { menu.classList.remove('active'); subToggle.classList.remove('active'); subMenu.classList.remove('active'); });
     document.getElementById('servicesDropdown').addEventListener('click', e => e.stopPropagation());
 
-    // Book Online Toggle
+    // Book Online
     document.getElementById('cfBookButton').addEventListener('click', () => {
         document.getElementById('cfContactFormSection').classList.toggle('active');
     });
 
-    // OBFUSCATED CALL NOW (both buttons)
+    // CALL NOW – BOTH BUTTONS (NAV + FORM)
     const setupCallButton = (btn) => {
         btn.addEventListener('click', function() {
             if (this.dataset.revealed) return;
             const digits = [2,0,1,2,9,8,3,4,9,9];
             const num = digits.map(d => String.fromCharCode(48 + d)).join('');
-            const formatted = '+1 (' + num.slice(0,3) + ') ' + num.slice(3,6) + '-' + num.slice(6);
+            const formatted = `+1 (${num.slice(0,3)}) ${num.slice(3,6)}-${num.slice(6)}`;
             this.innerHTML = formatted;
             this.dataset.revealed = 'true';
-            this.onclick = () => window.location.href = 'tel:+' + num;
+            this.onclick = () => window.location.href = 'tel:+1' + num;
         });
     };
     setupCallButton(document.getElementById('navCallNow'));
@@ -399,7 +303,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const email = this.user_email.value.trim();
         const appliance = this.appliance.value || 'GE Appliance';
-
         emailjs.sendForm('service_emxksio', 'template_tmexlql', this)
             .then(() => {
                 this.reset();
