@@ -25,9 +25,7 @@
             color:white; font-weight:600; cursor:pointer; padding:12px 20px; border-radius:6px; transition:all .3s;
             background:rgba(255,255,255,0.1); white-space:nowrap;
         }
-        .services-btn:hover { background:rgba(255,255,255,0.2); }
-
-        /* NAV CALL NOW – RIGHT OF SERVICES */
+        .services:hover { background:rgba(255,255,255,0.2); }
         .nav-call-btn {
             background:var(--red); color:white; padding:12px 28px; border-radius:6px; font-weight:700;
             text-decoration:none; font-size:17px; transition:all .3s; cursor:pointer;
@@ -41,69 +39,58 @@
             max-height:78vh; overflow-y:auto;
         }
         .services-menu.active .services-dropdown { display:block; }
-        .services-dropdown li { padding:14px 28px; color:#eee; font-size:15px; transition:all .3s; cursor:pointer; }
-        .services-dropdown li:hover { background:var(--red); color:white; padding-left:38px; }
-        .submenu-toggle { display:flex; justify-content:space-between; align-items:center; font-weight:700;
-            background:rgba(255,255,255,0.15); margin:10px 20px; border-radius:8px; padding:14px 20px !important; }
-        .submenu-toggle i { transition:transform .3s; font-size:18px; }
-        .submenu-toggle.active i { transform:rotate(90deg); }
-        .additional-submenu { max-height:0; overflow:hidden; transition:max-height .5s ease;
-            background:rgba(0,0,0,0.2); margin:0 20px 10px; border-radius:8px; }
-        .additional-submenu.active { max-height:1200px; padding:10px 0; }
-        .additional-submenu li { padding-left:50px !important; }
-        .additional-submenu li:hover { padding-left:60px !important; }
+        .services-dropdown li {
+            padding:14px 28px; color:#eee; font-size:15px; transition:all .3s; cursor:pointer;
+        }
+        .services-dropdown li:hover {
+            background:var(--red); color:white; padding-left:38px;
+        }
 
-        /* HERO – MOBILE-FRIENDLY & BEAUTIFUL */
+        /* HERO – MOBILE PERFECT */
         .hero {
-            position: relative;
-            color: white;
-            text-align: center;
-            padding: 160px 20px 120px;
-            margin-top: 80px;
-            background: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)), 
-                        url('https://cdn.avbportal.com/magento-media/website-themes/service-repair/homepage-hero-products-no-logo.png') center/cover no-repeat;
-            background-attachment: scroll;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative; color: white; text-align: center; padding: 160px 20px 120px;
+            margin-top: 80px; background: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)),
+            url('https://cdn.avbportal.com/magento-media/website-themes/service-repair/homepage-hero-products-no-logo.png') center/cover no-repeat;
+            background-attachment: scroll; min-height: 70vh; display: flex; align-items: center; justify-content: center;
         }
-        .hero h1 { 
-            font-size: 52px; margin-bottom: 16px; text-shadow: 3px 3px 12px rgba(0,0,0,0.9); line-height: 1.2;
-        }
-        .hero p { 
-            font-size: 24px; max-width: 900px; margin: 0 auto 35px; text-shadow: 2px 2px 8px rgba(0,0,0,0.9); line-height: 1.4;
-        }
-        .btn { 
-            background:var(--red); color:white; padding:16px 40px; border-radius:8px; font-weight:700; 
-            text-decoration:none; display:inline-block; font-size:20px; transition:all .3s; 
-        }
+        .hero h1 { font-size: 52px; margin-bottom: 16px; text-shadow: 3px 3px 12px rgba(0,0,0,0.9); line-height: 1.2; }
+        .hero p { font-size: 24px; max-width: 900px; margin: 0 auto 35px; text-shadow: 2px 2px 8px rgba(0,0,0,0.9); }
+        .btn { background:var(--red); color:white; padding:16px 40px; border-radius:8px; font-weight:700; text-decoration:none; display:inline-block; font-size:20px; transition:all .3s; }
         .btn:hover { background:#c41b20; transform:translateY(-3px); box-shadow:0 10px 30px rgba(228,30,38,0.5); }
-
-        /* MOBILE HERO OPTIMIZATION */
-        @media (max-width: 768px) {
-            .hero { padding: 130px 15px 90px; min-height: 65vh; background-position: center 35%; }
-            .hero h1 { font-size: 42px; }
-            .hero p { font-size: 20px; }
-            .btn { padding:14px 32px; font-size:18px; }
-        }
-        @media (max-width: 480px) {
-            .hero { padding: 110px 15px 70px; min-height: 60vh; }
-            .hero h1 { font-size: 34px; }
-            .hero p { font-size: 18px; }
-            .btn { padding:12px 28px; font-size:17px; }
-        }
+        @media (max-width: 768px) { .hero { padding:130px 15px 90px; min-height:65vh; background-position:center 35%; } .hero h1{font-size:42px;} .hero p{font-size:20px;} }
+        @media (max-width: 480px) { .hero { padding:110px 15px 70px; min-height:60vh; } .hero h1{font-size:34px;} .hero p{font-size:18px;} }
 
         section { padding:90px 0; }
         .alt { background:var(--gray); }
-        .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
-        .service { background:white; padding:40px 35px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.08); text-align:center; transition:all .4s ease; }
-        .service:hover { transform:translateY(-12px); box-shadow:0 20px 40px rgba(0,0,0,0.15); }
-        .service i { font-size:52px; margin-bottom:20px; color:var(--blue); }
-        .service:hover i { color:var(--red); }
-        footer { background:#111; color:#ccc; padding:60px 0 30px; text-align:center; }
 
-        /* SERVICE AREAS – FULLY WORKING */
+        /* APPLIANCE CARDS WITH BEAUTIFUL HOVER DROPDOWNS */
+        .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
+        .service {
+            background:white; padding:40px 35px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.08);
+            text-align:center; transition:all .4s ease; position:relative; cursor:pointer;
+        }
+        .service:hover { transform:translateY(-12px); box-shadow:0 20px 40px rgba(0,0,0,0.15); }
+        .service i { font-size:52px; margin-bottom:20px; color:var(--blue); transition:color .3s; }
+        .service:hover i { color:var(--red); }
+
+        .service-types {
+            margin-top:20px; padding:20px; background:rgba(0,48,135,0.05); border-radius:10px;
+            max-height:0; overflow:hidden; transition:max-height .5s ease, opacity .5s ease; opacity:0;
+        }
+        .service.active .service-types { max-height:1000px; opacity:1; }
+        .service-types h4 { margin:0 0 15px; color:var(--blue); font-size:18px; font-weight:600; }
+        .service-types ul { list-style:none; padding:0; margin:0; }
+        .service-types li {
+            padding:12px 20px; margin:6px 0; background:rgba(255,255,255,0.8); border-radius:8px;
+            transition:all .3s; cursor:default; color:#333; font-size:15px;
+        }
+        .service-types li:hover {
+            background:var(--red); color:white; padding-left:30px; transform:translateX(5px);
+        }
+
+        @media (max-width:768px) { .service-types li { padding:10px 15px; } }
+
+        /* SERVICE AREAS */
         #sa-service-areas{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px;position:relative;animation:fadeIn .8s ease-out forwards}
         #sa-service-areas h2{font-size:34px;text-align:center;color:inherit;margin-bottom:5px;text-shadow:0 2px 4px rgba(0,0,0,.3);transition:transform .3s,color .3s}
         #sa-service-areas h2:hover{color:#ffd700;transform:scale(1.05)}
@@ -146,12 +133,19 @@
         .cf-success-content{background:white;padding:40px 30px;border-radius:12px;text-align:center;max-width:90%;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
         .cf-success-content p{font-size:20px;font-weight:600;color:#003087;margin:0 0 25px;line-height:1.6}
         .cf-close-modal{background:var(--red);color:white;border:none;padding:12px 32px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer}
+
+        /* ORIGINAL FOOTER */
+        footer { background:#111; color:#ccc; padding:60px 0 30px; text-align:center; }
+        footer p { margin:10px 0; }
+        footer strong { color:#fff; }
+
         @media(max-width:768px){.nav-wrapper{flex-direction:column;padding:15px 0}.logo{margin-bottom:10px}.nav-right{width:100%;justify-content:center;gap:15px}.services-dropdown{top:100px}.sa-responsive-columns{columns:2}}
         @media(max-width:480px){.sa-responsive-columns{columns:1}}
     </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
     <div class="container nav-wrapper">
         <div class="logo">GE Appliance Repair Bergen County</div>
@@ -190,7 +184,7 @@
     </div>
 </header>
 
-<!-- MOBILE-FRIENDLY HERO IMAGE -->
+<!-- HERO -->
 <section class="hero">
     <div class="container">
         <h1>Authorized GE Appliance Repair<br>Bergen County, New Jersey</h1>
@@ -199,22 +193,150 @@
     </div>
 </section>
 
+<!-- APPLIANCE GRID WITH HOVER DROPDOWNS -->
 <section class="alt">
     <div class="container">
         <h2 style="text-align:center; font-size:36px; margin-bottom:50px;">We Repair All GE Appliances</h2>
         <div class="services-grid">
-            <div class="service"><i class="fas fa-tshirt"></i><h3>GE Washer Repair</h3></div>
-            <div class="service"><i class="fas fa-wind"></i><h3>GE Dryer Repair</h3></div>
-            <div class="service"><i class="fas fa-snowflake"></i><h3>GE Refrigerator Repair</h3></div>
-            <div class="service"><i class="fas fa-utensils"></i><h3>GE Dishwasher Repair</h3></div>
-            <div class="service"><i class="fas fa-temperature-high"></i><h3>GE Oven & Range Repair</h3></div>
-            <div class="service"><i class="fas fa-burn"></i><h3>GE Cooktop Repair</h3></div>
-            <div class="service"><i class="fas fa-temperature-high"></i><h3>GE Microwave Repair</h3></div>
-            <div class="service"><i class="fas fa-wine-glass-alt"></i><h3>GE Wine Cooler Repair</h3></div>
-            <div class="service"><i class="fas fa-tools"></i><h3>All GE Appliances</h3></div>
+
+            <div class="service" onclick="this.classList.toggle('active')">
+                <i class="fas fa-tshirt"></i><h3>GE Washer Repair</h3>
+                <div class="service-types">
+                    <h4>We Service All Types:</h4>
+                    <ul>
+                        <li>Front Load Washers</li>
+                        <li>Top Load Washers</li>
+                        <li>Commercial Washers</li>
+                        <li>Residential Washers</li>
+                        <li>Portable Washers</li>
+                        <li>Washer/Dryer Combos</li>
+                        <li>Stackable Washers</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service" onclick="this.classList.toggle('active')">
+                <i class="fas fa-wind"></i><h3>GE Dryer Repair</h3>
+                <div class="service-types">
+                    <h4>We Service All Types:</h4>
+                    <ul>
+                        <li>Gas Dryers</li>
+                        <li>Electric Dryers</li>
+                        <li>Ventless Dryers</li>
+                        <li>Heat Pump Dryers</li>
+                        <li>Front Load Dryers</li>
+                        <li>Top Load Dryers</li>
+                        <li>Residential & Commercial</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service" onclick="this.classList.toggle('active')">
+                <i class="fas fa-temperature-high"></i><h3>GE Oven & Range Repair</h3>
+                <div class="service-types">
+                    <h4>We Service All Types:</h4>
+                    <ul>
+                        <li>Gas Ovens</li>
+                        <li>Electric Ovens</li>
+                        <li>Wall Ovens</li>
+                        <li>Convection Ovens</li>
+                        <li>Steam Ovens</li>
+                        <li>Microwave Combos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service" onclick="this.classList.toggle('active')">
+                <i class="fas fa-snowflake"></i><h3>GE Refrigerator Repair</h3>
+                <div class="service-types">
+                    <h4>We Service All Types:</h4>
+                    <ul>
+                        <li>Top-Freezer</li>
+                        <li>Bottom-Freezer</li>
+                        <li>Side-by-Side</li>
+                        <li>French Door</li>
+                        <li>Built-In</li>
+                        <li>Counter Depth</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service" onclick="this.classList.toggle('active')">
+                <i class="fas fa-utensils"></i><h3>GE Dishwasher Repair</h3>
+                <div class="service-types">
+                    <h4>We Service All Types:</h4>
+                    <ul>
+                        <li>Built-In Dishwashers</li>
+                        <li>Integrated / Panel-Ready</li>
+                        <li>Tall Tub</li>
+                        <li>Portable</li>
+                        <li>Dishwasher Drawers</li>
+                        <li>Top Control</li>
+                        <li>Front Control</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service" onclick="this.classList.toggle('active')">
+                <i class="fas fa-burn"></i><h3>GE Cooktop Repair</h3>
+                <div class="service-types">
+                    <h4>We Service All Types:</h4>
+                    <ul>
+                        <li>Gas Cooktops</li>
+                        <li>Electric Cooktops</li>
+                        <li>Induction Cooktops</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service" onclick="this.classList.toggle('active')">
+                <i class="fas fa-temperature-high"></i><h3>GE Microwave Repair</h3>
+                <div class="service-types">
+                    <h4>We Service All Types:</h4>
+                    <ul>
+                        <li>Convection Microwaves</li>
+                        <li>Countertop Microwaves</li>
+                        <li>Built-in Microwaves</li>
+                        <li>Over-the-Range</li>
+                        <li>Undercounter Microwaves</li>
+                        <li>Smart Microwaves</li>
+                        <li>Microwave Drawers</li>
+                        <li>Wall Oven Combos</li>
+                        <li>Commercial Microwaves</li>
+                        <li>Low Profile</li>
+                        <li>Compact & Solo</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service" onclick="this.classList.toggle('active')">
+                <i class="fas fa-wine-glass-alt"></i><h3>GE Wine Cooler Repair</h3>
+                <div class="service-types">
+                    <h4>We Service All Types:</h4>
+                    <ul>
+                        <li>Compressor Wine Coolers</li>
+                        <li>Thermoelectric Wine Coolers</li>
+                        <li>Countertop Wine Coolers</li>
+                        <li>Single Zone</li>
+                        <li>Dual Zone</li>
+                        <li>Freestanding</li>
+                        <li>Undercounter / Built-In</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="service" onclick="this.classList.toggle('active')">
+                <i class="fas fa-tools"></i><h3>All GE Appliances</h3>
+                <div class="service-types">
+                    <h4>Plus any other GE appliance — we fix them all!</h4>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
+
+<!-- SERVICE AREAS + CONTACT FORM + FOOTER + FULL JS BELOW -->
 
 <section class="alt" id="contact">
     <div class="container">
@@ -223,9 +345,7 @@
             <h2>Service Areas – All of Bergen County, NJ</h2>
             <p>We proudly serve <strong>every single town and municipality</strong> in Bergen County with fast, reliable, same-day GE appliance repair.</p>
             <div class="sa-dropdown-container">
-                <button class="sa-dropdown-button" id="saToggleBtn" aria-expanded="false" aria-controls="saDropdownContent">
-                    View All Bergen County Service Areas
-                </button>
+                <button class="sa-dropdown-button" id="saToggleBtn">View All Bergen County Service Areas</button>
                 <div class="sa-dropdown-content" id="saDropdownContent">
                     <div class="sa-slide">
                         <h2>All Bergen County NJ Towns We Service</h2>
@@ -237,7 +357,6 @@
 
         <section id="cf-schedule-container">
             <div class="cf-schedule-text">Schedule Your GE Repair Online</div>
-            
             <button class="cf-book-button" id="cfBookButton">Book Online</button>
             <button class="form-call-now" id="formCallNow">Call Now</button>
 
@@ -277,6 +396,7 @@
     </div>
 </section>
 
+<!-- ORIGINAL FOOTER -->
 <footer>
     <div class="container">
         <p style="font-size:18px; margin-bottom:20px;"><strong>GE Appliance Repair Bergen County NJ</strong></p>
@@ -285,8 +405,9 @@
     </div>
 </footer>
 
+<!-- FULL WORKING JAVASCRIPT -->
 <script>
-// Full Bergen County towns list
+// Full Bergen County towns
 const bergenTowns = [
     {name:"Allendale",zip:"07401"},{name:"Alpine",zip:"07620"},{name:"Bergenfield",zip:"07621"},{name:"Bogota",zip:"07603"},
     {name:"Carlstadt",zip:"07072"},{name:"Cliffside Park",zip:"07010"},{name:"Closter",zip:"07624"},{name:"Cresskill",zip:"07626"},
@@ -306,7 +427,7 @@ const bergenTowns = [
     {name:"Tenafly",zip:"07670"},{name:"Teterboro",zip:"07608"},{name:"Upper Saddle River",zip:"07458"},{name:"Waldwick",zip:"07463"},
     {name:"Wallington",zip:"07057"},{name:"Washington Township",zip:"07676"},{name:"Westwood",zip:"07675"},{name:"Woodcliff Lake",zip:"07677"},
     {name:"Wood-Ridge",zip:"07075"},{name:"Wyckoff",zip:"07481"}
-].sort((a,b) => a.name.localeCompare(b.name));
+].sort((a,b)=>a.name.localeCompare(b.name));
 
 document.addEventListener('DOMContentLoaded', () => {
     // Service Areas
@@ -343,7 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('cfContactFormSection').classList.toggle('active');
     });
 
-    // CALL NOW – BOTH BUTTONS (NAV + FORM) – PERFECT FORMAT + BOT-PROOF
+    // CALL NOW – BOTH BUTTONS
     const setupCallButton = (btn) => {
         btn.addEventListener('click', function() {
             if (this.dataset.revealed) return;
