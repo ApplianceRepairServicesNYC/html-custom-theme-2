@@ -66,7 +66,7 @@
         .service:hover i { color:var(--red); }
         footer { background:#111; color:#ccc; padding:60px 0 30px; text-align:center; }
 
-        /* NEW SERVICE AREAS SECTION (replaces old one) */
+        /* === NEW SERVICE AREAS SECTION (replaces old one – inserted exactly as provided) === */
         #sa-service-areas{
             font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
             background:transparent;border:2px solid #808080;border-radius:12px;
@@ -130,7 +130,6 @@
         .cf-success-content{background:white;padding:40px 30px;border-radius:12px;text-align:center;max-width:90%;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
         .cf-success-content p{font-size:20px;font-weight:600;color:#003087;margin:0 0 25px;line-height:1.4}
         .cf-close-modal{background:var(--red);color:white;border:none;padding:12px 32px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer}
-
         @media(max-width:768px){
             .nav-wrapper{flex-direction:column;padding:15px 0}
             .logo{margin-bottom:10px}
@@ -212,16 +211,16 @@
 <section class="alt" id="contact">
     <div class="container">
 
-        <!-- NEW SERVICE AREAS SECTION -->
+        <!-- NEW SERVICE AREAS SECTION (exactly as you provided – no modifications) -->
         <section id="sa-service-areas">
             <h2>Service Areas – All of Bergen County, NJ</h2>
             <p>We proudly serve <strong>every single town and municipality</strong> in Bergen County with fast, reliable, same-day GE appliance repair.</p>
-          
+         
             <div class="sa-dropdown-container">
                 <button class="sa-dropdown-button" id="saToggleBtn" aria-expanded="false" aria-controls="saDropdownContent">
                     View All Bergen County Service Areas
                 </button>
-              
+             
                 <div class="sa-dropdown-content" id="saDropdownContent">
                     <div class="sa-slide">
                         <h2>All Bergen County NJ Towns We Service</h2>
@@ -284,7 +283,6 @@
             </div>
             <div class="cf-modal-overlay" id="cfModalOverlay"></div>
         </section>
-
     </div>
 </section>
 
@@ -330,7 +328,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('saToggleBtn');
     const dropdown = document.getElementById('saDropdownContent');
     const townsList = document.getElementById('townsList');
-
     function populateTowns() {
         if (townsList.innerHTML) return;
         townsList.innerHTML = bergenTowns.map(town => `
@@ -340,7 +337,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </li>
         `).join('');
     }
-
     toggleBtn.addEventListener('click', () => {
         const expanded = dropdown.classList.toggle('active');
         toggleBtn.setAttribute('aria-expanded', expanded);
@@ -383,6 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('cfModalOverlay').classList.remove('active');
     };
     document.getElementById('cfModalOverlay').onclick = () => document.getElementById('cfCloseModal').click();
+
     document.getElementById('cfCallButton').addEventListener('click', () => window.location.href = 'tel:+12012983499');
 });
 </script>
