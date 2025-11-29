@@ -27,7 +27,7 @@
         }
         .services-btn:hover { background:rgba(255,255,255,0.2); }
 
-        /* NAVIGATION CALL NOW – EXACT SAME AS ORIGINAL (RIGHT OF SERVICES) */
+        /* NAVIGATION CALL NOW – RIGHT OF SERVICES */
         .nav-call-btn {
             background:var(--red); color:white; padding:12px 28px; border-radius:6px; font-weight:700;
             text-decoration:none; font-size:17px; transition:all .3s; cursor:pointer;
@@ -53,8 +53,22 @@
         .additional-submenu li { padding-left:50px !important; }
         .additional-submenu li:hover { padding-left:60px !important; }
 
-        .hero { background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('https://geappliancerepairbergencounty.com/assets/img/ge-repair-bergen-county.jpg') center/cover no-repeat; color:white; text-align:center; padding:160px 20px 100px; margin-top:80px; }
-        .btn { background:var(--red); color:white; padding:14px 34px; border-radius:6px; font-weight:600; text-decoration:none; display:inline-block; margin:15px; font-size:18px; }
+        /* NEW HERO WITH YOUR IMAGE */
+        .hero {
+            position: relative;
+            color: white;
+            text-align: center;
+            padding: 180px 20px 120px;
+            margin-top: 80px;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+                        url('https://cdn.avbportal.com/magento-media/website-themes/service-repair/homepage-hero-products-no-logo.png') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+        .hero h1 { font-size: 52px; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
+        .hero p { font-size: 24px; max-width: 900px; margin: 0 auto 35px; text-shadow: 1px 1px 6px rgba(0,0,0,0.8); }
+        .btn { background:var(--red); color:white; padding:16px 40px; border-radius:8px; font-weight:700; text-decoration:none; display:inline-block; font-size:20px; transition:all .3s; }
+        .btn:hover { background:#c41b20; transform:translateY(-3px); box-shadow:0 8px 25px rgba(228,30,38,0.4); }
+
         section { padding:90px 0; }
         .alt { background:var(--gray); }
         .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; }
@@ -64,8 +78,8 @@
         .service:hover i { color:var(--red); }
         footer { background:#111; color:#ccc; padding:60px 0 30px; text-align:center; }
 
-        /* SERVICE AREAS – YOUR ORIGINAL CODE */
-        #sa-service-areas{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px;position;animation:fadeIn .8s ease-out forwards}
+        /* SERVICE AREAS */
+        #sa-service-areas{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px;position:relative;animation:fadeIn .8s ease-out forwards}
         #sa-service-areas h2{font-size:34px;text-align:center;color:inherit;margin-bottom:5px;text-shadow:0 2px 4px rgba(0,0,0,.3);transition:transform .3s,color .3s}
         #sa-service-areas h2:hover{color:#ffd700;transform:scale(1.05)}
         #sa-service-areas p{font-size:16px;text-align:center;margin-bottom:20px;text-shadow:0 1px 3px rgba(0,0,0,.2)}
@@ -90,11 +104,8 @@
         .cf-schedule-text{font-family:'Montserrat',sans-serif;font-size:1.5rem;color:#2A2A2A;font-weight:600;text-align:center;margin-bottom:15px}
         .cf-book-button{display:block;padding:12px 20px;background:linear-gradient(45deg,#003087,#00205B);color:#fff;font-weight:600;border-radius:8px;border:none;cursor:pointer;margin:10px auto;width:100%;max-width:220px;height:60px;display:flex;align-items:center;justify-content:center;transition:all .3s}
         .cf-book-button:hover{background:linear-gradient(45deg,#00205B,#001A45);transform:translateY(-3px)}
-
-        /* FORM CALL NOW – BELOW BOOK ONLINE */
         .form-call-now{display:block;padding:12px 28px;background:var(--red);color:white;font-weight:700;border-radius:6px;font-size:17px;cursor:pointer;margin:15px auto 0;width:100%;max-width:220px;height:60px;display:flex;align-items:center;justify-content:center;transition:all .3s}
         .form-call-now:hover{background:#c41b20;transform:translateY(-3px)}
-
         .cf-contact-form-section{max-height:0;overflow:hidden;opacity:0;transition:all .6s ease;padding:0;background:linear-gradient(135deg,#003087 0%,#00205B 50%,#001A45 100%);border-radius:12px;margin-top:15px}
         .cf-contact-form-section.active{max-height:1600px;opacity:1;padding:20px}
         .expect-text{font-size:.95rem;color:#fff;text-align:center;margin-bottom:15px}
@@ -149,16 +160,16 @@
                     </div>
                 </ul>
             </div>
-            <!-- NAVIGATION CALL NOW – TO THE RIGHT OF SERVICES (EXACT ORIGINAL POSITION) -->
             <div class="nav-call-btn" id="navCallNow">Call Now</div>
         </div>
     </div>
 </header>
 
+<!-- NEW HERO IMAGE -->
 <section class="hero">
     <div class="container">
-        <h1 style="font-size:48px; margin-bottom:20px;">Authorized GE Appliance Repair<br>Bergen County, New Jersey</h1>
-        <p style="font-size:22px; max-width:800px; margin:0 auto 30px;">Same-Day Service • Factory-Trained Technicians • All Bergen County</p>
+        <h1>Authorized GE Appliance Repair<br>Bergen County, New Jersey</h1>
+        <p>Same-Day Service • Factory-Trained Technicians • All Bergen County</p>
         <a href="#contact" class="btn">Request Service Today</a>
     </div>
 </section>
@@ -183,6 +194,7 @@
 <section class="alt" id="contact">
     <div class="container">
 
+        <!-- SERVICE AREAS -->
         <section id="sa-service-areas">
             <h2>Service Areas – All of Bergen County, NJ</h2>
             <p>We proudly serve <strong>every single town and municipality</strong> in Bergen County with fast, reliable, same-day GE appliance repair.</p>
@@ -199,6 +211,7 @@
             </div>
         </section>
 
+        <!-- CONTACT FORM -->
         <section id="cf-schedule-container">
             <div class="cf-schedule-text">Schedule Your GE Repair Online</div>
             
