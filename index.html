@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
@@ -78,6 +77,33 @@
         .container { max-width:1200px; margin:0 auto; padding:0 20px; }
         header { background:var(--blue); color:white; padding:20px 0; position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
         .logo { font-size:26px; font-weight:700; }
+
+        /* NEW: Navigation with Services dropdown */
+        .nav-wrapper { display:flex; justify-content:space-between; align-items:center; }
+        .nav-right { position:relative; }
+        .services-menu { position:relative; display:inline-block; }
+        .services-btn { color:white; font-weight:600; cursor:pointer; padding:8px 15px; border-radius:4px; transition:all .3s; }
+        .services-btn:hover { background:rgba(255,255,255,0.1); }
+        .services-dropdown {
+            display:none;
+            position:absolute;
+            right:0;
+            top:100%;
+            background:var(--blue);
+            min-width:260px;
+            border-radius:8px;
+            box-shadow:0 8px 25px rgba(0,0,0,0.3);
+            padding:15px 0;
+            z-index:999;
+        }
+        .services-dropdown li {
+            padding:10px 25px;
+            color:#eee;
+            font-size:15px;
+            white-space:nowrap;
+        }
+        .services-menu:hover .services-dropdown { display:block; }
+
         .hero { background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('https://geappliancerepairbergencounty.com/assets/img/ge-repair-bergen-county.jpg') center/cover no-repeat; color:white; text-align:center; padding:160px 20px 100px; margin-top:80px; }
         .btn { background:var(--red); color:white; padding:14px 34px; border-radius:6px; font-weight:600; text-decoration:none; display:inline-block; margin:15px; font-size:18px; }
         .btn:hover { background:#c41b20; }
@@ -87,10 +113,8 @@
         .service { background:white; padding:35px; border-radius:10px; box-shadow:0 5px 20px rgba(0,0,0,0.08); text-align:center; }
         .service i { font-size:50px; color:var(--blue); margin-bottom:20px; }
         footer { background:#111; color:#ccc; padding:60px 0 30px; text-align:center; }
-        .towns { column-count:3; margin:30px 0; font-size:15px; }
-        @media(max-width:768px){ .towns{column-count:2;} }
-        @media(max-width:480px){ .towns{column-count:1;} }
-        /* === NEW FORM + SERVICE AREAS STYLES (unchanged from your code) === */
+
+        /* === ALL YOUR ORIGINAL STYLES BELOW (unchanged) === */
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         #sa-service-areas{background:transparent;border:2px solid #808080;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.2);margin:0 auto 3rem;padding:20px;position:relative;animation:fadeIn .8s ease-out forwards}
         #sa-service-areas h2{font-size:34px;text-align:center;color:inherit;margin-bottom:5px;text-shadow:0 2px 4px rgba(0,0,0,.3);transition:transform .3s,color .3s}
@@ -149,6 +173,7 @@
             .cf-book-button,.cf-call-button,.cf-call-slot{font-size:.9rem;height:50px;max-width:180px}
             .cf-contact-form-section.active{max-height:1200px}
             .cf-form-button,.cf-close-button{font-size:.9rem;height:50px;width:180px}
+            .services-dropdown { right:auto; left:50%; transform:translateX(-50%); }
         }
         @media(max-width:480px){
             .sa-responsive-columns{columns:1}
@@ -160,11 +185,26 @@
 </head>
 <body>
 <header>
-    <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+    <div class="container nav-wrapper">
         <div class="logo">GE Appliance Repair Bergen County</div>
-        <div style="font-weight:600;">Open 7 Days • 7 AM – 9 PM</div>
+        <div class="nav-right">
+            <div class="services-menu">
+                <div class="services-btn">Services</div>
+                <ul class="services-dropdown">
+                    <li>GE Washer Repair</li>
+                    <li>GE Dryer Repair</li>
+                    <li>GE Refrigerator Repair</li>
+                    <li>GE Dishwasher Repair</li>
+                    <li>GE Oven & Range Repair</li>
+                    <li>GE Cooktop Repair</li>
+                    <li>GE Microwave Repair</li>
+                    <li>All GE Appliances</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </header>
+
 <section class="hero">
     <div class="container">
         <h1 style="font-size:48px; margin-bottom:20px;">Authorized GE Appliance Repair<br>Bergen County, New Jersey</h1>
@@ -172,6 +212,7 @@
         <a href="#contact" class="btn">Request Service Today</a>
     </div>
 </section>
+
 <section class="alt">
     <div class="container">
         <h2 style="text-align:center; font-size:36px; margin-bottom:50px;">We Repair All GE Appliances</h2>
@@ -188,12 +229,9 @@
     </div>
 </section>
 
-<!-- THE ENTIRE "Serving All 70 Towns in Bergen County" SECTION HAS BEEN REMOVED -->
-
-<!-- YOUR NEW FULL FORM + SERVICE AREAS DROPDOWN -->
+<!-- SERVICE AREAS + CONTACT FORM SECTION (unchanged) -->
 <section class="alt" id="contact">
     <div class="container">
-        <!-- SERVICE AREAS DROPDOWN -->
         <section id="sa-service-areas" aria-label="Service Areas in Bergen County NJ">
             <h2>Service Areas – All of Bergen County, NJ</h2>
             <p>We proudly serve <strong>every single town and municipality</strong> in Bergen County with fast, reliable, same-day GE appliance repair.</p>
@@ -211,7 +249,7 @@
                 </div>
             </div>
         </section>
-        <!-- FULL SCHEDULING FORM -->
+
         <section id="cf-schedule-container" aria-label="Schedule Your GE Repair">
             <div class="cf-schedule-text">Schedule Your GE Repair Online</div>
             <button class="cf-book-button" id="cfBookButton" aria-expanded="false" aria-controls="cfContactFormSection">Book Online</button>
@@ -271,15 +309,17 @@
         </section>
     </div>
 </section>
+
 <footer>
     <div class="container">
         <p style="font-size:18px; margin-bottom:20px;"><strong>GE Appliance Repair Bergen County NJ</strong></p>
         <p>100 Corporate Drive, Mahwah, NJ 07430<br>
-        Open 7 Days a Week • 7:00 AM – 9:00 PM<br>
+        <strong>Open 7 Days a Week • 7:00 AM – 9:00 PM</strong><br>
         Email: info@geappliancerepairbergencounty.com</p>
         <p style="margin-top:40px; color:#777;">© 2025 GE Appliance Repair Bergen County. All Rights Reserved.</p>
     </div>
 </footer>
+
 <script>
 /* ALL 70 BERGEN COUNTY TOWNS + FORM LOGIC */
 const bergenTowns = [
@@ -308,8 +348,10 @@ const bergenTowns = [
     {name:"Westwood",zip:"07675"},{name:"Woodcliff Lake",zip:"07677"},{name:"Wood-Ridge",zip:"07075"},
     {name:"Wyckoff",zip:"07481"}
 ].sort((a,b)=>a.name.localeCompare(b.name));
+
 const saDropdown = document.getElementById('saDropdownContent');
 const saBtn = document.querySelector('.sa-dropdown-button');
+
 function saPopulate(){
     const ul = document.querySelector('.sa-responsive-columns');
     if(ul.innerHTML) return;
@@ -320,15 +362,18 @@ function saPopulate(){
         </li>`).join('');
     ul.innerHTML = html;
 }
+
 function saToggleZip(el){
     const dd = el.querySelector('.sa-zip-dropdown');
     dd.classList.toggle('active');
 }
+
 function saToggleDropdown(){
     const expanded = saDropdown.classList.toggle('active');
     saBtn.setAttribute('aria-expanded', expanded);
     if(expanded) saPopulate();
 }
+
 document.addEventListener('DOMContentLoaded',()=>{
     const cfBookBtn = document.getElementById('cfBookButton');
     const cfFormSect = document.getElementById('cfContactFormSection');
@@ -338,13 +383,16 @@ document.addEventListener('DOMContentLoaded',()=>{
     const cfCloseBtn = document.getElementById('cfCloseModal');
     const cfCallBtn = document.getElementById('cfCallButton');
     const cfCallSlot = document.getElementById('cfCallSlot');
+
     cfBookBtn.addEventListener('click',()=>{
         const expanded = cfFormSect.classList.toggle('active');
         cfBookBtn.setAttribute('aria-expanded',expanded);
     });
+
     const n = 2010000000 + 2983499;
     const tel = 'tel:+1'+n;
     const display = '+1 ('+n.toString().slice(0,3)+') '+n.toString().slice(3,6)+'-'+n.toString().slice(6);
+
     cfCallBtn.addEventListener('click',()=>{
         const a = document.createElement('a');
         a.href = tel; a.textContent = display; a.rel='nofollow';
@@ -352,23 +400,29 @@ document.addEventListener('DOMContentLoaded',()=>{
         cfCallBtn.remove();
         if(/Mobi|Android|iPhone/i.test(navigator.userAgent)) location.href = tel;
     });
+
     const showModal = ()=>{
         cfModal.classList.add('show');
         cfOverlay.classList.add('show');
         setTimeout(()=>{cfModal.classList.remove('show'); cfOverlay.classList.remove('show');},4000);
     };
+
     cfCloseBtn.onclick = cfOverlay.onclick = ()=>{ cfModal.classList.remove('show'); cfOverlay.classList.remove('show'); };
+
     cfForm.addEventListener('submit',e=>{
         e.preventDefault();
         let valid = true;
         document.querySelectorAll('.cf-form-group').forEach(g=>g.classList.remove('invalid'));
+
         if(!document.getElementById('cfName').value.trim()) { document.getElementById('cfName').parentElement.classList.add('invalid'); valid=false; }
         if(!document.getElementById('cfEmail').value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('cfEmail').value)) { document.getElementById('cfEmail').parentElement.classList.add('invalid'); valid=false; }
         if(!/^[0-9]{10}$/.test(document.getElementById('cfPhone').value)) { document.getElementById('cfPhone').parentElement.classList.add('invalid'); valid=false; }
         if(!document.getElementById('cfAddress').value.trim()) { document.getElementById('cfAddress').parentElement.classList.add('invalid'); valid=false; }
         if(!document.getElementById('cfSubject').value) { document.getElementById('cfSubject').parentElement.classList.add('invalid'); valid=false; }
         if(!document.getElementById('cfMessage').value.trim()) { document.getElementById('cfMessage').parentElement.classList.add('invalid'); valid=false; }
+
         if(!valid) return alert('Please fill in all required fields correctly.');
+
         emailjs.sendForm('service_emxksio','template_tmexlql',cfForm)
             .then(()=>{ showModal(); cfForm.reset(); cfFormSect.classList.remove('active'); cfBookBtn.setAttribute('aria-expanded','false'); })
             .catch(()=>{ alert('Failed to send. Please try again or call us directly.'); });
